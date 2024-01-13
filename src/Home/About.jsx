@@ -1,24 +1,24 @@
 /* eslint-disable react/no-unescaped-entities */
-import { AcademicCapIcon, GlobeAltIcon, BuildingLibraryIcon, FlagIcon } from '@heroicons/react/20/solid'
+import { AcademicCapIcon, GlobeAltIcon, BuildingLibraryIcon, FlagIcon, PhoneIcon } from '@heroicons/react/20/solid'
 import Form from './Form/Form'
 import logo from '../assets/logo.jpg'
 import cover from '../assets/cover.jpg'
+import { CheckIcon } from '@heroicons/react/20/solid'
+
+const includedFeatures = [
+    'Personalized guidance for your academic goals.',
+    'Access to a global network of prestigious institutions.',
+    'stress-free admissions.',
+    '24x7 availability for your support and inquiries.',
+]
 const featuresTwo = [
-    {
-        name: 'Expertise and Experience',
-        description: 'Future Way Consultants, a distinguished immigration consultancy, brings extensive expertise and years of experience to guide individuals in the intricacies of the immigration process for higher education. Our seasoned professionals excel in offering tailored services for students, whether their educational journey is domestic within India or on a global scale.'
-    },
     {
         name: 'Holistic Domestic and Global Network',
         description: 'Pride in our global network representing over 450 prestigious educational institutes worldwide, Future Way Consultants extends its commitment to providing holistic consultancy services domestically in India. This ensures individuals have access to a diverse range of academic programs, whether they choose to pursue education within the country or explore international opportunities.'
     },
     {
-        name: 'Proven Success Record',
-        description: 'With a remarkable success ratio of 85%-90% in obtaining visas, Future Way Consultants showcases its dedication to guiding clients through a successful immigration process. Whether aspiring to study in renowned institutions abroad or pursue educational opportunities within India, we stand as a trusted partner.'
-    },
-    {
         name: 'Comprehensive Domestic and International Services',
-        description: 'Beyond visa assistance, Future Way Consultants offers a comprehensive suite of services, including Student Visas, Spouse Dependent Visas, Visitor Visas, Study Permit Extensions, and Onshore Student Admissions. Recognizing the diverse needs of individuals, our services cater to both domestic and global educational goals.'
+        description: 'Beyond visa assistance, Future Way Consultants offers a comprehensive suite of services, including Student Visas, Study Permit Extensions, and Onshore Student Admissions. Recognizing the diverse needs of individuals, our services cater to both domestic and global educational goals.'
     },
     {
         name: 'Personalized Approach',
@@ -33,38 +33,38 @@ const featuresTwo = [
 const posts = [
     {
         id: 1,
-        title: 'Personalized Guidance:',
-        href: '#',
+        title: 'Personalized Guidance:'
+        ,
         description: 'Receive personalized counseling sessions tailored to your academic goals and preferences, ensuring a well-informed decision-making process.',
     },
     {
         id: 2,
-        title: 'Global Opportunities:',
-        href: '#',
+        title: 'Global Opportunities:'
+        ,
         description: 'Explore a diverse range of international educational opportunities, gaining access to renowned institutions across the globe.',
     },
     {
         id: 3,
-        title: 'Efficient Application Process:',
-        href: '#',
+        title: 'Efficient Application Process:'
+        ,
         description: 'Streamline the application process with our expert assistance, minimizing stress and maximizing the chances of successful admissions.',
     },
     {
         id: 6,
-        title: 'Global Network of Educational Institutes:',
-        href: '#',
+        title: 'Global Network of Educational Institutes:'
+        ,
         description: 'Gain exposure to a vast network of over 450 prestigious educational institutes worldwide, offering a wide range of academic programs.',
     },
     {
         id: 8,
-        title: 'Career Advancement Opportunities:',
-        href: '#',
+        title: 'Career Advancement Opportunities:'
+        ,
         description: 'Elevate your career through higher education, unlocking opportunities for professional growth and advancement.',
     },
     {
         id: 9,
-        title: 'Proven Success Record:',
-        href: '#',
+        title: 'Proven Success Record:'
+        ,
         description: 'Rely on our track record of successful outcomes, with a focus on ensuring flourishing results for our clients.',
     }
 
@@ -101,9 +101,9 @@ import { Dialog } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 
 const navigation = [
-    { name: 'Home', href: '#' },
-    { name: 'About ', href: '#' },
-    { name: 'Contact', href: '#' },
+    { name: 'Home' },
+    { name: 'About ' },
+    { name: 'Contact' },
 ]
 function About() {
     const homeRef = useRef(null);
@@ -120,19 +120,15 @@ function About() {
         <div >
 
             {/* nav */}
-            <div ref={homeRef} className="bg-cover bg-center bg-no-repeat h-screen relative" >
+            <div ref={homeRef} className="bg-cover bg-center bg-no-repeat h-screen relative"  >
                 {/* style={{ backgroundImage: `url(${cover})` }}> */}
 
-                <header className="fixed inset-x-0 top-0 z-50 bg-white sticky-header " >
+                <header className="fixed inset-x-0 top-0 z-50 sticky-header backdrop-filter backdrop-blur-md" >
                     <nav className="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
                         <div className="flex lg:flex-1">
-                            <a href="#" className="-m-1.5 p-1.5">
-                                <span className="sr-only ">FutureWay</span>
-                                <img
-                                    className="h-8 w-auto"
-                                    src={logo}
-                                    alt=""
-                                />
+                            <a href="#" className="-m-1.5 p-1.5 text-4xl font-bold">
+                                FutureWay
+
                             </a>
                         </div>
                         <div className="flex lg:hidden">
@@ -187,7 +183,7 @@ function About() {
                                         {navigation.map((item) => (
                                             <a
                                                 key={item.name}
-                                                href={item.href}
+
                                                 className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                                             >
                                                 {item.name}
@@ -247,14 +243,14 @@ function About() {
 
 
                             {posts.map((post) => (
-                                <article key={post.id} className="flex max-w-xl flex-col items-start justify-between">
+                                <article key={post.id} className="flex max-w-xl flex-col items-start justify-between hover:shadow-xl p-3 rounded-xl cursor-pointer">
 
                                     <div className="group relative">
                                         <h3 className="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
-                                            <a href={post.href}>
-                                                <span className="absolute inset-0" />
-                                                {post.title}
-                                            </a>
+
+                                            <span className="absolute inset-0" />
+                                            {post.title}
+
                                         </h3>
                                         <p className="mt-5 line-clamp-3 text-sm leading-6 text-gray-600">{post.description}</p>
                                     </div>
@@ -273,7 +269,6 @@ function About() {
             <div className="bg-white py-24 sm:py-32">
                 <div className="mx-auto px-6 lg:px-8">
                     <div className="mx-auto max-w-4xl lg:text-center">
-                        <h2 className="text-base font-semibold leading-7 text-indigo-600">Deploy faster</h2>
                         <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
                             Our Motto
                         </p>
@@ -303,8 +298,7 @@ function About() {
 
             {/* what we do with pics */}
             <div className="bg-white">
-                <div className="mx-auto grid  grid-cols-1 items-center gap-x-8 gap-y-16 px-4 py-24 sm:px-6 sm:py-32  lg:grid-cols-2 lg:px-8">
-                    <div>
+            <div className="mx-auto grid max-w-2xl grid-cols-1 items-center gap-x-8 gap-y-16 px-4 py-24 sm:px-6 sm:py-32 lg:max-w-7xl lg:grid-cols-2 lg:px-8">                    <div>
                         <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Why Future Way?</h2>
                         <p className="mt-4 text-gray-500">
                             At Future Way Consultants, we stand out as the preferred choice for those seeking higher education due to our commitment to providing comprehensive guidance tailored to both global and local educational aspirations. Our seasoned professionals bring a wealth of expertise, ensuring a smooth and successful immigration process for those looking to study abroad or within India.                        </p>
@@ -362,9 +356,40 @@ function About() {
 
                 <div className="grid flex-grow  card  rounded-box place-items-center"> <Form /></div>
             </div>
-
+            <div className="bg-white py-24 sm:py-32">
+                <div className="mx-auto max-w-7xl px-6 lg:px-8">
+                    <div className="mx-auto max-w-2xl sm:text-center">
+                        <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Give Us a call</h2>
+                        <p className="mt-6 text-lg leading-8 text-gray-600">
+                            Need assistance or have questions? Feel free to reach out to us. Our team is here to help you on your educational journey.
+                        </p>
+                    </div>
+                    <div className="mx-auto mt-16 max-w-2xl rounded-3xl ring-1 ring-gray-200 sm:mt-20 lg:mx-0 lg:flex lg:max-w-none">
+                        <div className="p-8 sm:p-10 lg:flex-auto">
+                            <button className="block mx-auto w-[100px] rounded-md bg-indigo-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                            >Call us</button>
+                            <div className="mt-10 flex items-center gap-x-4">
+                                <h4 className="flex-none text-sm font-semibold leading-6 text-indigo-600">Why us?</h4>
+                                <div className="h-px flex-auto bg-gray-100" />
+                            </div>
+                            <ul
+                                role="list"
+                                className="mt-8 grid grid-cols-1 gap-4 text-sm leading-6 text-gray-600 sm:grid-cols-2 sm:gap-6"
+                            >
+                                {includedFeatures.map((feature) => (
+                                    <li key={feature} className="flex gap-x-3">
+                                        <CheckIcon className="h-6 w-5 flex-none text-indigo-600" aria-hidden="true" />
+                                        {feature}
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     )
+
 
 }
 
