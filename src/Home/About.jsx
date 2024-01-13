@@ -63,10 +63,9 @@ import { Dialog } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 
 const navigation = [
-    { name: 'Product', href: '#' },
-    { name: 'Features', href: '#' },
-    { name: 'Marketplace', href: '#' },
-    { name: 'Company', href: '#' },
+    { name: 'Home', href: '#' },
+    { name: 'About ', href: '#' },
+    { name: 'Contact', href: '#' },
 ]
 function About() {
 
@@ -106,11 +105,7 @@ function About() {
                                 </a>
                             ))}
                         </div>
-                        <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-                            <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
-                                Log in <span aria-hidden="true">&rarr;</span>
-                            </a>
-                        </div>
+
                     </nav>
                     <Dialog as="div" className="lg:hidden" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
                         <div className="fixed inset-0 z-50" />
@@ -162,7 +157,7 @@ function About() {
 
 
 
-{/* head */}
+                {/* head */}
                 <div className="relative isolate px-6 pt-14 lg:px-8">
 
                     <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
@@ -185,7 +180,7 @@ function About() {
             </div>
 
 
-{/* yigfuyf */}
+            {/* yigfuyf */}
 
             <div className="bg-white py-24 sm:py-32">
                 <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -271,7 +266,7 @@ function About() {
 
 
 
-{/* what we do with pics */}
+            {/* what we do with pics */}
             <div className="bg-white">
                 <div className="mx-auto grid  grid-cols-1 items-center gap-x-8 gap-y-16 px-4 py-24 sm:px-6 sm:py-32  lg:grid-cols-2 lg:px-8">
                     <div>
@@ -317,7 +312,7 @@ function About() {
 
 
 
-{/* connect from */}
+            {/* connect from */}
             <div className="flex flex-col w-full lg:flex-row">
                 <div className="grid flex-grow  card  rounded-box place-items-center"> <div
                     className="absolute inset-x-0 top-[-10rem] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[-20rem]"
