@@ -1,7 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
-import { AcademicCapIcon, GlobeAltIcon, BuildingLibraryIcon, FlagIcon, PhoneIcon } from '@heroicons/react/20/solid'
+import { AcademicCapIcon, GlobeAltIcon, BuildingLibraryIcon, FlagIcon } from '@heroicons/react/20/solid'
 import Form from './Form/Form'
-import logo from '../assets/logo.jpg'
 import cover from '../assets/cover.jpg'
 import { CheckIcon } from '@heroicons/react/20/solid'
 
