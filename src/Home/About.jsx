@@ -5,6 +5,10 @@ import logo from '../assets/logo.jpg'
 import cover from '../assets/cover.jpg'
 import { CheckIcon } from '@heroicons/react/20/solid'
 
+import img1 from '../assets/img1.jpg';
+import img3 from "../assets/img3.jpg";
+import img4 from "../assets/img4.jpg";
+import img5 from "../assets/img5.jpg";
 const includedFeatures = [
     'Personalized guidance for your academic goals.',
     'Access to a global network of prestigious institutions.',
@@ -120,14 +124,14 @@ function About() {
         <div >
 
             {/* nav */}
-            <div ref={homeRef} className="bg-cover bg-center bg-no-repeat h-screen relative"  >
-                {/* style={{ backgroundImage: `url(${cover})` }}> */}
+            <div ref={homeRef} className="bg-cover bg-center bg-no-repeat h-screen relative" style={{ backgroundImage: `url(${cover})` }}>
+                {/*  */}
 
                 <header className="fixed inset-x-0 top-0 z-50 sticky-header backdrop-filter backdrop-blur-md" >
                     <nav className="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
                         <div className="flex lg:flex-1">
                             <a href="#" className="-m-1.5 p-1.5 text-4xl font-bold">
-                                FutureWay
+                                logo
 
                             </a>
                         </div>
@@ -204,15 +208,13 @@ function About() {
 
                     <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
                         <div className="text-center">
-                            <p className="text-9xl font-bold tracking-tight text-black sm:text-6xl">
-                                Future Way                            </p>
-                            <p className="mt-6 text-lg leading-8 text-gray-600">
-                                Welcome to Future Way Consultants, your go-to destination for comprehensive higher education consultancy services Operating both domestically in India and globally, we take pride in guiding individuals towards pursuing their academic dreams abroad.
-                            </p>
-                            <div className="mt-10 flex items-center justify-center gap-x-6">
+                            <p className=" text-4xl font-bold tracking-wider text-gray-900 sm:text-8xl font-tekosans">
+                                FutureWay                            </p>
+
+                            <div className="mt-4 flex items-center justify-center gap-x-6">
 
                                 <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
-                                    Learn more <span aria-hidden="true">→</span>
+                                    A bright future begins here <span aria-hidden="true">→</span>
                                 </a>
                             </div>
                         </div>
@@ -223,11 +225,11 @@ function About() {
             </div>
 
 
-            {/* yigfuyf */}
+            {/* about us */}
 
             <div ref={aboutRef} className="bg-white py-24 sm:py-32">
                 <div className="mx-auto max-w-7xl px-6 lg:px-8">
-                    <div className="mx-auto max-w-2xl lg:mx-0">
+                    <div className="mx-auto lg:mx-0">
                         <h1 className="text-5xl font-bold tracking-tight text-gray-900 sm:text-4xl">About us</h1>
                         <p className="mt-2 text-lg leading-8 text-gray-600">
                             Welcome to Future Way Consultants, a leading immigration consultancy and services firm dedicated to guiding individuals towards pursuing higher education overseas. At Future Way, we believe in the transformative power of education and the endless possibilities it can unlock.
@@ -237,10 +239,6 @@ function About() {
                     <div>
 
                         <div className="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 border-t border-gray-200 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3">
-
-
-
-
 
                             {posts.map((post) => (
                                 <article key={post.id} className="flex max-w-xl flex-col items-start justify-between hover:shadow-xl p-3 rounded-xl cursor-pointer">
@@ -267,8 +265,13 @@ function About() {
             {/* what we do */}
 
             <div className="bg-white py-24 sm:py-32">
-                <div className="mx-auto px-6 lg:px-8">
-                    <div className="mx-auto max-w-4xl lg:text-center">
+              
+              
+              
+              
+              
+            <div className="mx-auto max-w-7xl px-6 lg:px-8">
+                    <div className="mx-auto lg:mx-0">
                         <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
                             Our Motto
                         </p>
@@ -276,6 +279,9 @@ function About() {
                             At Future Way Consultants, our guiding principles are encapsulated in four core mottos. These mottos encapsulate our dedication to providing unparalleled services in the realm of higher education consultancy. Each motto reflects our commitment to excellence, fostering connections, and creating boundless opportunities for our clients. Our mission is to empower ambitions and embrace global excellence, ensuring that every individual's educational journey is met with personalized guidance and unwavering support.
                         </p>
                     </div>
+
+                    <div>
+
                     <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-7xl">
                         <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-2 lg:gap-y-16">
                             {features.map((feature) => (
@@ -291,47 +297,54 @@ function About() {
                             ))}
                         </dl>
                     </div>
+                    </div>
+
                 </div>
+
+              
+              
+              
+              
             </div>
 
 
 
             {/* what we do with pics */}
             <div className="bg-white">
-            <div className="mx-auto grid max-w-2xl grid-cols-1 items-center gap-x-8 gap-y-16 px-4 py-24 sm:px-6 sm:py-32 lg:max-w-7xl lg:grid-cols-2 lg:px-8">                    <div>
-                        <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Why Future Way?</h2>
-                        <p className="mt-4 text-gray-500">
-                            At Future Way Consultants, we stand out as the preferred choice for those seeking higher education due to our commitment to providing comprehensive guidance tailored to both global and local educational aspirations. Our seasoned professionals bring a wealth of expertise, ensuring a smooth and successful immigration process for those looking to study abroad or within India.                        </p>
+                <div className="mx-auto grid max-w-2xl grid-cols-1 items-center gap-x-8 gap-y-16 px-4 py-24 sm:px-6 sm:py-32 lg:max-w-7xl lg:grid-cols-2 lg:px-8">                    <div>
+                    <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Why Future Way?</h2>
+                    <p className="mt-4 text-gray-500">
+                        At Future Way Consultants, we stand out as the preferred choice for those seeking higher education due to our commitment to providing comprehensive guidance tailored to both global and local educational aspirations. Our seasoned professionals bring a wealth of expertise, ensuring a smooth and successful immigration process for those looking to study abroad or within India.                        </p>
 
-                        <dl className="mt-16 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 sm:gap-y-16 lg:gap-x-8">
-                            {featuresTwo.map((feature) => (
-                                <div key={feature.name} className="border-t border-gray-200 pt-4">
-                                    <dt className="font-medium text-gray-900">{feature.name}</dt>
-                                    <dd className="mt-2 text-sm text-gray-500">{feature.description}</dd>
-                                </div>
-                            ))}
-                        </dl>
-                    </div>
+                    <dl className="mt-16 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 sm:gap-y-16 lg:gap-x-8">
+                        {featuresTwo.map((feature) => (
+                            <div key={feature.name} className="border-t border-gray-200 pt-4">
+                                <dt className="font-medium text-gray-900">{feature.name}</dt>
+                                <dd className="mt-2 text-sm text-gray-500">{feature.description}</dd>
+                            </div>
+                        ))}
+                    </dl>
+                </div>
                     <div className="grid grid-cols-2 grid-rows-2 gap-4 sm:gap-6 lg:gap-8">
                         <img
-                            src="https://tailwindui.com/img/ecommerce-images/product-feature-03-detail-01.jpg"
+                            src={img1}
                             alt="Walnut card tray with white powder coated steel divider and 3 punchout holes."
-                            className="rounded-lg bg-gray-100"
+                            className="rounded-lg bg-gray-100 w-full h-full object-cover"
                         />
                         <img
-                            src="https://tailwindui.com/img/ecommerce-images/product-feature-03-detail-02.jpg"
+                            src={img3}
                             alt="Top down view of walnut card tray with embedded magnets and card groove."
-                            className="rounded-lg bg-gray-100"
+                            className="rounded-lg bg-gray-100 w-full h-full object-cover"
                         />
                         <img
-                            src="https://tailwindui.com/img/ecommerce-images/product-feature-03-detail-03.jpg"
+                            src={img4}
                             alt="Side of walnut card tray with card groove and recessed card area."
-                            className="rounded-lg bg-gray-100"
+                            className="rounded-lg bg-gray-100 w-full h-full object-cover"
                         />
                         <img
-                            src="https://tailwindui.com/img/ecommerce-images/product-feature-03-detail-04.jpg"
+                            src={img5}
                             alt="Walnut card tray filled with cards and card angled in dedicated groove."
-                            className="rounded-lg bg-gray-100"
+                            className="rounded-lg bg-gray-100 w-full h-full object-cover"
                         />
                     </div>
                 </div>
@@ -352,7 +365,9 @@ function About() {
                         <p className="mt-2 text-lg leading-8 text-gray-600">
                             Ready to embark on your educational journey? Contact us today, and let Future Way Consultants be your trusted partner in realizing your academic dreams.
                         </p>
-                    </div></div>
+                    </div>
+
+                </div>
 
                 <div className="grid flex-grow  card  rounded-box place-items-center"> <Form /></div>
             </div>
