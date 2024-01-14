@@ -1,37 +1,9 @@
 /* eslint-disable react/no-unescaped-entities */
 import { AcademicCapIcon, GlobeAltIcon, BuildingLibraryIcon, FlagIcon } from '@heroicons/react/20/solid'
 import Form from './Form/Form'
-import cover from '../assets/cover.jpg'
-import { CheckIcon } from '@heroicons/react/20/solid'
+import Connect from './Form/Connect'
+import cover from '../assets/cover.png'
 
-import img1 from '../assets/img1.jpg';
-import img3 from "../assets/img3.jpg";
-import img4 from "../assets/img4.jpg";
-import img5 from "../assets/img5.jpg";
-const includedFeatures = [
-    'Personalized guidance for your academic goals.',
-    'Access to a global network of prestigious institutions.',
-    'stress-free admissions.',
-    '24x7 availability for your support and inquiries.',
-]
-const featuresTwo = [
-    {
-        name: 'Holistic Domestic and Global Network',
-        description: 'Pride in our global network representing over 450 prestigious educational institutes worldwide, Future Way Consultants extends its commitment to providing holistic consultancy services domestically in India. This ensures individuals have access to a diverse range of academic programs, whether they choose to pursue education within the country or explore international opportunities.'
-    },
-    {
-        name: 'Comprehensive Domestic and International Services',
-        description: 'Beyond visa assistance, Future Way Consultants offers a comprehensive suite of services, including Student Visas, Study Permit Extensions, and Onshore Student Admissions. Recognizing the diverse needs of individuals, our services cater to both domestic and global educational goals.'
-    },
-    {
-        name: 'Personalized Approach',
-        description: 'Acknowledging the uniqueness of each individual\'s educational journey, Future Way Consultants adopts a personalized approach. Our one-on-one counseling sessions provide guidance tailored to academic goals and preferences, whether planning to study within India or explore international education options.'
-    },
-    {
-        name: 'Commitment to Domestic and Global Success',
-        description: 'Committed to the success of clients both domestically and globally, Future Way Consultants empowers individuals with knowledge and support. As a dedicated partner, we facilitate informed decisions about education and career paths, irrespective of whether the choice is domestic or international.'
-    }
-]
 
 const posts = [
     {
@@ -102,6 +74,7 @@ const features = [
 import { useState, useRef } from 'react'
 import { Dialog } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import Features from './Features/Features'
 
 function About() {
     const homeRef = useRef(null);
@@ -319,95 +292,24 @@ function About() {
 
             {/* what we do with pics */}
             <div className="bg-white">
-                <div className="mx-auto grid max-w-2xl grid-cols-1 items-center gap-x-8 gap-y-16 px-4 py-24 sm:px-6 sm:py-32 lg:max-w-7xl lg:grid-cols-2 lg:px-8">                    <div>
-                    <h2 className="text-3xl font-bold tracking-wider font-tekosans text-gray-900 sm:text-4xl">Why us?</h2>
-                    <p className="mt-4 text-gray-500">
-                        At Future Way Consultants, we stand out as the preferred choice for those seeking higher education due to our commitment to providing comprehensive guidance tailored to both global and local educational aspirations. Our seasoned professionals bring a wealth of expertise, ensuring a smooth and successful immigration process for those looking to study abroad or within India.                        </p>
-
-                    <dl className="mt-16 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 sm:gap-y-16 lg:gap-x-8">
-                        {featuresTwo.map((feature) => (
-                            <div key={feature.name} className="border-t border-gray-200 pt-4 ">
-                                <dt className="font-bold tracking-tighter text-gray-900 font-tekosan">{feature.name}</dt>
-                                <dd className="mt-2 text-sm text-gray-500">{feature.description}</dd>
-                            </div>
-                        ))}
-                    </dl>
-                </div>
-                    <div className="grid grid-cols-2 grid-rows-2 gap-4 sm:gap-6 lg:gap-8">
-                        <img
-                            src={img1}
-                            alt="Walnut card tray with white powder coated steel divider and 3 punchout holes."
-                            className="rounded-lg bg-gray-100 w-full h-full object-cover"
-                        />
-                        <img
-                            src={img3}
-                            alt="Top down view of walnut card tray with embedded magnets and card groove."
-                            className="rounded-lg bg-gray-100 w-full h-full object-cover"
-                        />
-                        <img
-                            src={img4}
-                            alt="Side of walnut card tray with card groove and recessed card area."
-                            className="rounded-lg bg-gray-100 w-full h-full object-cover"
-                        />
-                        <img
-                            src={img5}
-                            alt="Walnut card tray filled with cards and card angled in dedicated groove."
-                            className="rounded-lg bg-gray-100 w-full h-full object-cover"
-                        />
-                    </div>
-                </div>
+                <Features/>
             </div>
 
 
 
             {/* connect from */}
-            <div ref={contactRef} className="flex flex-col w-full lg:flex-row">
-                <div className="grid flex-grow  card  rounded-box place-items-center"> <div
-                    className="absolute inset-x-0 top-[-10rem] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[-20rem]"
-                    aria-hidden="true"
-                >
-
-                </div>
-                    <div className="mx-auto max-w-2xl text-center">
-                        <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl font-tekosans">Contact US</h2>
-                        <p className="mt-2 text-lg leading-8 text-gray-600">
-                            Ready to embark on your educational journey? Contact us today, and let Future Way Consultants be your trusted partner in realizing your academic dreams.
-                        </p>
+            <div>
+                <div ref={contactRef} className="flex flex-col w-full lg:flex-row p-5">
+                    <div className="grid flex-grow  card  rounded-box place-items-center"> <div
+                        className="absolute inset-x-0 top-[-10rem] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[-20rem]"
+                        aria-hidden="true">
+    
                     </div>
-
-                </div>
-
-                <div className="grid flex-grow  card  rounded-box place-items-center"> <Form /></div>
-            </div>
-            <div className="bg-white py-24 sm:py-32">
-                <div className="mx-auto max-w-7xl px-6 lg:px-8">
-                    <div className="mx-auto max-w-2xl sm:text-center">
-                        <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl font-tekosans">Give Us a call</h2>
-                        <p className="mt-6 text-lg leading-8 text-gray-600">
-                            Need assistance or have questions? Feel free to reach out to us. Our team is here to help you on your educational journey.
-                        </p>
+                        <Connect />
+    
                     </div>
-                    <div className="mx-auto mt-16 max-w-2xl rounded-3xl ring-1 ring-gray-200 sm:mt-20 lg:mx-0 lg:flex lg:max-w-none">
-                        <div className="p-8 sm:p-10 lg:flex-auto">
-                            <button className="block mx-auto w-[100px] rounded-md bg-indigo-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-                            >Call us</button>
-                            <div className="mt-10 flex items-center gap-x-4">
-                                <h4 className="flex-none text-sm font-semibold leading-6 text-indigo-600">Why us?</h4>
-                                <div className="h-px flex-auto bg-gray-100" />
-                            </div>
-                            <ul
-                                role="list"
-                                className="mt-8 grid grid-cols-1 gap-4 text-sm leading-6 text-gray-600 sm:grid-cols-2 sm:gap-6"
-                            >
-                                {includedFeatures.map((feature) => (
-                                    <li key={feature} className="flex gap-x-3">
-                                        <CheckIcon className="h-6 w-5 flex-none text-indigo-600" aria-hidden="true" />
-                                        {feature}
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-                    </div>
+    
+                    <div className="grid flex-grow  card  rounded-box place-items-center"> <Form /></div>
                 </div>
             </div>
         </div>

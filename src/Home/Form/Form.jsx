@@ -175,18 +175,18 @@ function Form() {
   };
 
   return (
-    <div className="isolate px-6 py-24 sm:py-32 lg:px-8 bg-white">
+    <div className="isolate px-6 py-24 sm:py-32 lg:px-8">
       <form
         onSubmit={handleSubmit}
         action="#"
         method="POST"
-        className="mx-auto mt-16 max-w-xl sm:mt-20"
+        className="mx-auto mt-16 max-w-xl sm:mt-20  bg-indigo-600 p-8 rounded-2xl"
       >
         <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
           <div>
             <label
               htmlFor="name"
-              className="block text-sm font-semibold leading-6 text-gray-900"
+              className="block text-sm font-semibold leading-6  text-white"
             >
               Name
             </label>
@@ -197,7 +197,7 @@ function Form() {
                 id="name"
                 value={formData.name}
                 onChange={handleInputChange}
-                className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                className="shadow-xl block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
               />
             </div>
             {formErrors.name && (
@@ -207,7 +207,7 @@ function Form() {
           <div>
             <label
               htmlFor="fatherName"
-              className="block text-sm font-semibold leading-6 text-gray-900"
+              className="block text-sm font-semibold leading-6  text-white"
             >
               Father's Name
             </label>
@@ -218,7 +218,7 @@ function Form() {
                 id="fatherName"
                 value={formData.fatherName}
                 onChange={handleInputChange}
-                className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                className="shadow-xl block w-full rounded-md border-0 px-3.5 py-2 text-gray-900m ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
               />
             </div>
             {formErrors.fatherName && (
@@ -229,7 +229,7 @@ function Form() {
           <div>
             <label
               htmlFor="motherName"
-              className="block text-sm font-semibold leading-6 text-gray-900"
+              className="block text-sm font-semibold leading-6  text-white"
             >
               Mother's Name
             </label>
@@ -241,7 +241,7 @@ function Form() {
                 id="mother-name"
                 value={formData.motherName}
                 onChange={handleInputChange}
-                className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                className="shadow-xl block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
               />
             </div>
             {formErrors.motherName && (
@@ -252,7 +252,7 @@ function Form() {
           <div>
             <label
               htmlFor="phoneNumber"
-              className="block text-sm font-semibold leading-6 text-gray-900"
+              className="block text-sm font-semibold leading-6  text-white"
             >
               Phone Number
             </label>
@@ -264,7 +264,7 @@ function Form() {
                 autoComplete="tel"
                 value={formData.phoneNumber}
                 onChange={handleInputChange}
-                className="block w-full rounded-md border-0 px-3.5 py-2 pl-20 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                className="shadow-xl block w-full rounded-md border-0 px-3.5 py-2 pl-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
               />
             </div>
             {formErrors.phoneNumber && (
@@ -274,7 +274,7 @@ function Form() {
           <div>
             <label
               htmlFor="email"
-              className="block text-sm font-semibold leading-6 text-gray-900"
+              className="block text-sm font-semibold leading-6  text-white"
             >
               Email
             </label>
@@ -286,7 +286,7 @@ function Form() {
                 autoComplete="email"
                 value={formData.email}
                 onChange={handleInputChange}
-                className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                className="shadow-xl block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
               />
             </div>
             {formErrors.email && (
@@ -297,7 +297,7 @@ function Form() {
           <div>
             <label
               htmlFor="dateOfBirth"
-              className="block text-sm font-semibold leading-6 text-gray-900"
+              className="block text-sm font-semibold leading-6  text-white"
             >
               Date of Birth
             </label>
@@ -316,7 +316,7 @@ function Form() {
                     .split("T")[0]
                 } // Set the maximum date to 10 years ago
                 min="1920-01-01" // Set a reasonable minimum date, you can adjust it as needed
-                className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                className="shadow-xl block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
               />
             </div>
             {formErrors.dateOfBirth && (
@@ -324,7 +324,7 @@ function Form() {
             )}
           </div>
           <div>
-            <label className="block text-sm font-semibold leading-6 text-gray-900">
+            <label className="block text-sm font-semibold leading-6  text-white">
               Gender
             </label>
             <div className="mt-2.5">
@@ -338,7 +338,7 @@ function Form() {
                   onChange={handleInputChange}
                   className="mr-1"
                 />
-                <label htmlFor="male" className="text-sm text-gray-900">
+                <label htmlFor="male" className="text-sm  text-white">
                   Male
                 </label>
               </div>
@@ -352,7 +352,7 @@ function Form() {
                   onChange={handleInputChange}
                   className="mr-1"
                 />
-                <label htmlFor="female" className="text-sm text-gray-900">
+                <label htmlFor="female" className="text-sm  text-white">
                   Female
                 </label>
               </div>
@@ -365,7 +365,7 @@ function Form() {
           <div>
             <label
               htmlFor="address"
-              className="block text-sm font-semibold leading-6 text-gray-900"
+              className="block text-sm font-semibold leading-6  text-white"
             >
               Address
             </label>
@@ -376,7 +376,7 @@ function Form() {
                 value={formData.address}
                 onChange={handleInputChange}
                 rows={4}
-                className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                className="shadow-xl block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
               />
             </div>
             {formErrors.address && (
@@ -387,7 +387,7 @@ function Form() {
           <div>
             <label
               htmlFor="pincode"
-              className="block text-sm font-semibold leading-6 text-gray-900"
+              className="block text-sm font-semibold leading-6  text-white"
             >
               Pin Code
             </label>
@@ -398,7 +398,7 @@ function Form() {
                 id="pincode"
                 value={formData.pincode}
                 onChange={handleInputChange}
-                className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                className="shadow-xl block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
               />
             </div>
             {formErrors.pincode && (
@@ -408,7 +408,7 @@ function Form() {
           <div>
             <label
               htmlFor="tenthSchoolName"
-              className="block text-sm font-semibold leading-6 text-gray-900"
+              className="block text-sm font-semibold leading-6  text-white"
             >
               10th School Name
             </label>
@@ -419,7 +419,7 @@ function Form() {
                 id="10th-school-name"
                 value={formData.tenthSchoolName}
                 onChange={handleInputChange}
-                className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                className="shadow-xl block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
               />
             </div>
             {formErrors.tenthSchoolName && (
@@ -431,7 +431,7 @@ function Form() {
           <div>
             <label
               htmlFor="10th-percentage"
-              className="block text-sm font-semibold leading-6 text-gray-900"
+              className="block text-sm font-semibold leading-6  text-white"
             >
               10th Percentage
             </label>
@@ -442,7 +442,7 @@ function Form() {
                 id="10th-percentage"
                 value={formData.tenthPercentage}
                 onChange={handleInputChange}
-                className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                className="shadow-xl block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
               />
             </div>
             {formErrors.tenthPercentage && (
@@ -454,7 +454,7 @@ function Form() {
           <div>
             <label
               htmlFor="12th-school-name"
-              className="block text-sm font-semibold leading-6 text-gray-900"
+              className="block text-sm font-semibold leading-6 text-white"
             >
               12th School Name
             </label>
@@ -465,7 +465,7 @@ function Form() {
                 id="12th-school-name"
                 value={formData.twelfthSchoolName}
                 onChange={handleInputChange}
-                className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                className="shadow-xl block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
               />
             </div>
             {formErrors.twelfthSchoolName && (
@@ -477,7 +477,7 @@ function Form() {
           <div>
             <label
               htmlFor="12th-percentage"
-              className="block text-sm font-semibold leading-6 text-gray-900"
+              className="block text-sm font-semibold leading-6  text-white"
             >
               12th Percentage
             </label>
@@ -488,7 +488,7 @@ function Form() {
                 id="12th-percentage"
                 value={formData.twelfthPercentage}
                 onChange={handleInputChange}
-                className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                className="shadow-xl block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
               />
             </div>
             {formErrors.twelfthPercentage && (
@@ -500,7 +500,7 @@ function Form() {
           <div>
             <label
               htmlFor="12th-result"
-              className="block text-sm font-semibold leading-6 text-gray-900"
+              className="block text-sm font-semibold leading-6  text-white"
             >
               12th Result (Pass/Fail)
             </label>
@@ -510,7 +510,7 @@ function Form() {
                 name="twelfthResult"
                 value={formData.twelfthResult}
                 onChange={handleInputChange}
-                className="block w-full rounded-md border-0 bg-transparent bg-none px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm"
+                className="shadow-xl block w-full rounded-md border-0 bg-transparent bg-none px-3.5 py-2 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm"
               >
                 <option value="pass">Pass</option>
                 <option value="fail">Fail</option>
@@ -530,9 +530,9 @@ function Form() {
         <div className="flex flex-col items-center mt-10">
           <button
             type="submit"
-            className="block w-full rounded-md bg-indigo-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+            className="shadow-xl block w-full rounded-md bg-indigo-600 border  px-3.5 py-2.5 text-center text-sm font-semibold text-white hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 "
           >
-            Lets talk
+            Send
           </button>
           {successMessage && (
             <div className="text-green-600 font-semibold mt-2">
