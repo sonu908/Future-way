@@ -2,8 +2,8 @@
 import { AcademicCapIcon, GlobeAltIcon, BuildingLibraryIcon, FlagIcon } from '@heroicons/react/20/solid'
 import Form from './Form/Form'
 import Connect from './Form/Connect'
-import cover from '../assets/cover.png'
-
+import cover from '../assets/cover.jpg'
+import logo from '../assets/logo.png'
 
 const posts = [
     {
@@ -55,7 +55,7 @@ const features = [
     {
         name: 'Empowering Ambitions, Embracing Global Excellence',
         description:
-            'Future Way Consultants empowers ambitions by embracing global excellence, ensuring that our clients receive world-class education and professional growth opportunities.',
+            'myFutureWay Consultants empowers ambitions by embracing global excellence, ensuring that our clients receive world-class education and professional growth opportunities.',
         icon: BuildingLibraryIcon,
     },
     {
@@ -67,7 +67,7 @@ const features = [
     {
         name: 'Your Journey, Our Expertise',
         description:
-            'At Future Way Consultants, your educational journey is our expertise. We stand as dedicated partners, offering personalized guidance and unwavering support for a seamless and successful path ahead.',
+            'At myFutureWay Consultants, your educational journey is our expertise. We stand as dedicated partners, offering personalized guidance and unwavering support for a seamless and successful path ahead.',
         icon: FlagIcon,
     },
 ]
@@ -97,10 +97,10 @@ function About() {
                 <header className="fixed inset-x-0 top-0 z-50 sticky-header backdrop-filter backdrop-blur-sm" >
                     <nav className="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
                         <div className="flex lg:flex-1">
-                            <a href="#" className="-m-1.5 p-1.5 text-4xl font-bold">
-                                logo
-
-                            </a>
+                            <div className='h-12 flex items-center '>
+                                <img src={logo} alt="" className="h-full" />
+                                <p className='font-abrill-fatface'>myfutureway</p>
+                            </div>
                         </div>
                         <div className="flex lg:hidden">
                             <button
@@ -134,9 +134,9 @@ function About() {
                         <div className="fixed inset-0 z-50" />
                         <Dialog.Panel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
                             <div className="flex items-center justify-between">
-                                <a href="#" className="-m-1.5 p-1.5">
-                                    <span className="sr-only">THEFUTUREWAY</span>
-                                    <p>THEFUTUREWAY</p>
+                                <a href="" className="-m-1.5 p-1.5 ">
+                                    <span className="sr-only">MYFUTUREWAY</span>
+                                    <p><img className='h-14' src={logo} alt="" /></p>
                                 </a>
                                 <button
                                     type="button"
@@ -188,12 +188,16 @@ function About() {
 
                     <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
                         <div className="text-center">
-                            <p className=" text-4xl font-lighter tracking-wider text-gray-900 sm:text-8xl font-tekosans">
-                                THEFUTUREWAY                            </p>
+                            <p className=" text-5xl mt-20 font-lighter tracking-tighter text-gray-900 sm:text-8xl lg:mt-5 font-abrill-fatface">
+                                myfutureway
+                            </p>
 
-                            <div className="mt-4 flex items-center justify-center gap-x-6">
+                            <div className="mt-4 flex items-center justify-center gap-x-6" onClick={() => {
+                                scrollToSection(contactRef)
+                                setMobileMenuOpen(false);
+                            }}>
 
-                                <a href="#" className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                                <a href="#" className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 bg-gray-50"
                                 >
                                     A bright future begins here <span aria-hidden="true">→</span>
                                 </a>
@@ -292,7 +296,7 @@ function About() {
 
             {/* what we do with pics */}
             <div className="bg-white">
-                <Features/>
+                <Features />
             </div>
 
 
@@ -303,12 +307,12 @@ function About() {
                     <div className="grid flex-grow  card  rounded-box place-items-center"> <div
                         className="absolute inset-x-0 top-[-10rem] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[-20rem]"
                         aria-hidden="true">
-    
+
                     </div>
                         <Connect />
-    
+
                     </div>
-    
+
                     <div className="grid flex-grow  card  rounded-box place-items-center"> <Form /></div>
                 </div>
             </div>
