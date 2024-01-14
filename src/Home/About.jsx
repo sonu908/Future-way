@@ -103,11 +103,6 @@ import { useState, useRef } from 'react'
 import { Dialog } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 
-const navigation = [
-    { name: 'Home' },
-    { name: 'About ' },
-    { name: 'Contact' },
-]
 function About() {
     const homeRef = useRef(null);
     const aboutRef = useRef(null);
@@ -126,7 +121,7 @@ function About() {
             <div ref={homeRef} className="bg-cover bg-center bg-no-repeat h-screen relative" style={{ backgroundImage: `url(${cover})` }}>
                 {/*  */}
 
-                <header className="fixed inset-x-0 top-0 z-50 sticky-header backdrop-filter backdrop-blur-md" >
+                <header className="fixed inset-x-0 top-0 z-50 sticky-header backdrop-filter backdrop-blur-sm" >
                     <nav className="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
                         <div className="flex lg:flex-1">
                             <a href="#" className="-m-1.5 p-1.5 text-4xl font-bold">
@@ -146,13 +141,16 @@ function About() {
                         </div>
                         <div className="hidden lg:flex lg:gap-x-12">
 
-                            <button className="text-sm font-semibold leading-6 text-gray-900" onClick={() => scrollToSection(homeRef)}>
+                            <button className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                                onClick={() => scrollToSection(homeRef)}>
                                 Home
                             </button>
-                            <button className="text-sm font-semibold leading-6 text-gray-900" onClick={() => scrollToSection(aboutRef)}>
+                            <button className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                                onClick={() => scrollToSection(aboutRef)}>
                                 About Us
                             </button>
-                            <button className="text-sm font-semibold leading-6 text-gray-900" onClick={() => scrollToSection(contactRef)}>
+                            <button className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                                onClick={() => scrollToSection(contactRef)}>
                                 Contact
                             </button>
 
@@ -164,12 +162,8 @@ function About() {
                         <Dialog.Panel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
                             <div className="flex items-center justify-between">
                                 <a href="#" className="-m-1.5 p-1.5">
-                                    <span className="sr-only">Your Company</span>
-                                    <img
-                                        className="h-8 w-auto"
-                                        src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-                                        alt=""
-                                    />
+                                    <span className="sr-only">THEFUTUREWAY</span>
+                                    <p>THEFUTUREWAY</p>
                                 </a>
                                 <button
                                     type="button"
@@ -183,15 +177,29 @@ function About() {
                             <div className="mt-6 flow-root">
                                 <div className="-my-6 divide-y divide-gray-500/10">
                                     <div className="space-y-2 py-6">
-                                        {navigation.map((item) => (
-                                            <a
-                                                key={item.name}
 
-                                                className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                                            >
-                                                {item.name}
-                                            </a>
-                                        ))}
+                                        <button className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                                            onClick={() => {
+                                                scrollToSection(homeRef);
+                                                setMobileMenuOpen(false);
+                                            }}>
+                                            Home
+                                        </button>
+                                        <button className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                                            onClick={() => {
+                                                scrollToSection(aboutRef)
+                                                setMobileMenuOpen(false);
+                                            }}>
+                                            About Us
+                                        </button>
+                                        <button className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                                            onClick={() => {
+                                                scrollToSection(contactRef)
+                                                setMobileMenuOpen(false);
+                                            }}>
+                                            Contact
+                                        </button>
+
                                     </div>
 
                                 </div>
@@ -207,12 +215,13 @@ function About() {
 
                     <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
                         <div className="text-center">
-                            <p className=" text-4xl font-bold tracking-wider text-gray-900 sm:text-8xl font-tekosans">
-                                FutureWay                            </p>
+                            <p className=" text-4xl font-lighter tracking-wider text-gray-900 sm:text-8xl font-tekosans">
+                                THEFUTUREWAY                            </p>
 
                             <div className="mt-4 flex items-center justify-center gap-x-6">
 
-                                <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
+                                <a href="#" className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                                >
                                     A bright future begins here <span aria-hidden="true">→</span>
                                 </a>
                             </div>
@@ -229,7 +238,7 @@ function About() {
             <div ref={aboutRef} className="bg-white py-24 sm:py-32">
                 <div className="mx-auto max-w-7xl px-6 lg:px-8">
                     <div className="mx-auto lg:mx-0">
-                        <h1 className="text-5xl font-bold tracking-tight text-gray-900 sm:text-4xl">About us</h1>
+                        <h1 className="text-5xl font-bold tracking-tight text-gray-900 sm:text-4xl font-tekosans">About us</h1>
                         <p className="mt-2 text-lg leading-8 text-gray-600">
                             Welcome to Future Way Consultants, a leading immigration consultancy and services firm dedicated to guiding individuals towards pursuing higher education overseas. At Future Way, we believe in the transformative power of education and the endless possibilities it can unlock.
                         </p>
@@ -243,9 +252,9 @@ function About() {
                                 <article key={post.id} className="flex max-w-xl flex-col items-start justify-between hover:shadow-xl p-3 rounded-xl cursor-pointer">
 
                                     <div className="group relative">
-                                        <h3 className="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
+                                        <h3 className="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600 font-tekosans tracking-wider">
 
-                                            <span className="absolute inset-0" />
+                                            <span className="absolute inset-0 " />
                                             {post.title}
 
                                         </h3>
@@ -264,14 +273,14 @@ function About() {
             {/* what we do */}
 
             <div className="bg-white py-24 sm:py-32">
-              
-              
-              
-              
-              
-            <div className="mx-auto max-w-7xl px-6 lg:px-8">
+
+
+
+
+
+                <div className="mx-auto max-w-7xl px-6 lg:px-8">
                     <div className="mx-auto lg:mx-0">
-                        <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+                        <p className="mt-2 text-3xl font-bold text-gray-900 sm:text-4xl font-tekosans tracking-wider">
                             Our Motto
                         </p>
                         <p className="mt-6 text-lg leading-8 text-gray-600">
@@ -281,29 +290,29 @@ function About() {
 
                     <div>
 
-                    <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-7xl">
-                        <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-2 lg:gap-y-16">
-                            {features.map((feature) => (
-                                <div key={feature.name} className="relative pl-16">
-                                    <dt className="text-base font-semibold leading-7 text-gray-900">
-                                        <div className="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-600">
-                                            <feature.icon className="h-6 w-6 text-white" aria-hidden="true" />
-                                        </div>
-                                        {feature.name}
-                                    </dt>
-                                    <dd className="mt-2 text-base leading-7 text-gray-600">{feature.description}</dd>
-                                </div>
-                            ))}
-                        </dl>
-                    </div>
+                        <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-7xl">
+                            <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-2 lg:gap-y-16">
+                                {features.map((feature) => (
+                                    <div key={feature.name} className="relative pl-16">
+                                        <dt className=" tracking-wider font-semibold leading-7 text-gray-900 font-tekosans text-xl">
+                                            <div className="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-600">
+                                                <feature.icon className="h-6 w-6 text-white" aria-hidden="true" />
+                                            </div>
+                                            {feature.name}
+                                        </dt>
+                                        <dd className="mt-2 text-base leading-7 text-gray-600">{feature.description}</dd>
+                                    </div>
+                                ))}
+                            </dl>
+                        </div>
                     </div>
 
                 </div>
 
-              
-              
-              
-              
+
+
+
+
             </div>
 
 
@@ -311,14 +320,14 @@ function About() {
             {/* what we do with pics */}
             <div className="bg-white">
                 <div className="mx-auto grid max-w-2xl grid-cols-1 items-center gap-x-8 gap-y-16 px-4 py-24 sm:px-6 sm:py-32 lg:max-w-7xl lg:grid-cols-2 lg:px-8">                    <div>
-                    <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Why Future Way?</h2>
+                    <h2 className="text-3xl font-bold tracking-wider font-tekosans text-gray-900 sm:text-4xl">Why us?</h2>
                     <p className="mt-4 text-gray-500">
                         At Future Way Consultants, we stand out as the preferred choice for those seeking higher education due to our commitment to providing comprehensive guidance tailored to both global and local educational aspirations. Our seasoned professionals bring a wealth of expertise, ensuring a smooth and successful immigration process for those looking to study abroad or within India.                        </p>
 
                     <dl className="mt-16 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 sm:gap-y-16 lg:gap-x-8">
                         {featuresTwo.map((feature) => (
-                            <div key={feature.name} className="border-t border-gray-200 pt-4">
-                                <dt className="font-medium text-gray-900">{feature.name}</dt>
+                            <div key={feature.name} className="border-t border-gray-200 pt-4 ">
+                                <dt className="font-bold tracking-tighter text-gray-900 font-tekosan">{feature.name}</dt>
                                 <dd className="mt-2 text-sm text-gray-500">{feature.description}</dd>
                             </div>
                         ))}
@@ -360,7 +369,7 @@ function About() {
 
                 </div>
                     <div className="mx-auto max-w-2xl text-center">
-                        <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Contact US</h2>
+                        <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl font-tekosans">Contact US</h2>
                         <p className="mt-2 text-lg leading-8 text-gray-600">
                             Ready to embark on your educational journey? Contact us today, and let Future Way Consultants be your trusted partner in realizing your academic dreams.
                         </p>
@@ -373,7 +382,7 @@ function About() {
             <div className="bg-white py-24 sm:py-32">
                 <div className="mx-auto max-w-7xl px-6 lg:px-8">
                     <div className="mx-auto max-w-2xl sm:text-center">
-                        <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Give Us a call</h2>
+                        <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl font-tekosans">Give Us a call</h2>
                         <p className="mt-6 text-lg leading-8 text-gray-600">
                             Need assistance or have questions? Feel free to reach out to us. Our team is here to help you on your educational journey.
                         </p>
