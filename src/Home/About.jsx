@@ -1,8 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import { AcademicCapIcon, GlobeAltIcon, BuildingLibraryIcon, FlagIcon } from '@heroicons/react/20/solid'
 import Form from './Form/Form'
-import Connect from './Form/Connect'
-import cover from '../assets/cover.jpg'
 import logo from '../assets/logo.png'
 
 const posts = [
@@ -75,11 +73,13 @@ import { useState, useRef } from 'react'
 import { Dialog } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import Features from './Features/Features'
+import Hero from './Hero'
 
 function About() {
     const homeRef = useRef(null);
     const aboutRef = useRef(null);
     const contactRef = useRef(null);
+    const Formref = useRef(null);
 
     const scrollToSection = (ref) => {
         ref.current.scrollIntoView({ behavior: 'smooth' });
@@ -91,7 +91,7 @@ function About() {
         <div >
 
             {/* nav */}
-            <div ref={homeRef} className="bg-cover bg-center bg-no-repeat h-screen relative" style={{ backgroundImage: `url(${cover})` }}>
+            <div ref={homeRef} className="bg-cover bg-center bg-no-repeat h-screen relative" >
                 {/*  */}
 
                 <header className="fixed inset-x-0 top-0 z-50 sticky-header backdrop-filter backdrop-blur-sm" >
@@ -114,15 +114,15 @@ function About() {
                         </div>
                         <div className="hidden lg:flex lg:gap-x-12">
 
-                            <button className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                            <button className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-[#20B486] hover:"
                                 onClick={() => scrollToSection(homeRef)}>
                                 Home
                             </button>
-                            <button className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                            <button className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-[#20B486] hover:"
                                 onClick={() => scrollToSection(aboutRef)}>
                                 About Us
                             </button>
-                            <button className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                            <button className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-[#20B486] hover:"
                                 onClick={() => scrollToSection(contactRef)}>
                                 Contact
                             </button>
@@ -148,24 +148,24 @@ function About() {
                                 </button>
                             </div>
                             <div className="mt-6 flow-root">
-                                <div className="-my-6 divide-y divide-gray-500/10">
+                                <div className="-my-6 divide-y divide-[#20B486] hover:0/10">
                                     <div className="space-y-2 py-6">
 
-                                        <button className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                                        <button className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-[#20B486] hover:"
                                             onClick={() => {
                                                 scrollToSection(homeRef);
                                                 setMobileMenuOpen(false);
                                             }}>
                                             Home
                                         </button>
-                                        <button className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                                        <button className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-[#20B486] hover:"
                                             onClick={() => {
                                                 scrollToSection(aboutRef)
                                                 setMobileMenuOpen(false);
                                             }}>
                                             About Us
                                         </button>
-                                        <button className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                                        <button className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-[#20B486] hover:"
                                             onClick={() => {
                                                 scrollToSection(contactRef)
                                                 setMobileMenuOpen(false);
@@ -182,13 +182,19 @@ function About() {
                 </header>
 
 
+                {/* hero */}
+
+                <div className='w-full bg-white py-24 mt-24 mx-auto max-w-7xl px-6 lg:px-8' >
+                    <Hero />
+
+                </div>
 
                 {/* head */}
-                <div className="relative isolate px-6 pt-14 lg:px-8">
+                {/* <div className="relative isolate px-6 pt-14 lg:px-8">
 
                     <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
                         <div className="text-center">
-                            <p className=" text-5xl mt-20 font-lighter tracking-tighter text-gray-900 sm:text-8xl lg:mt-5 font-abrill-fatface">
+                            <p className=" text-5xl mt-20 font-lighter tracking-tighter text-gray-900 sm:text-8xl lg:mt-0 font-abrill-fatface">
                                 myfutureway
                             </p>
 
@@ -197,7 +203,7 @@ function About() {
                                 setMobileMenuOpen(false);
                             }}>
 
-                                <a href="#" className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 bg-gray-50"
+                                <a href="#" className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 bg-[#20B486] hover:"
                                 >
                                     A bright future begins here <span aria-hidden="true">→</span>
                                 </a>
@@ -206,6 +212,8 @@ function About() {
                     </div>
 
                 </div>
+*/}
+
 
             </div>
 
@@ -215,9 +223,9 @@ function About() {
             <div ref={aboutRef} className="bg-white py-24 sm:py-32">
                 <div className="mx-auto max-w-7xl px-6 lg:px-8">
                     <div className="mx-auto lg:mx-0">
-                        <h1 className="text-5xl font-bold tracking-tight text-gray-900 sm:text-4xl font-tekosans">About us</h1>
+                        <h1 className="text-5xl font-bold tracking-tight text-[#20B486] sm:text-4xl font-tekosans">About us</h1>
                         <p className="mt-2 text-lg leading-8 text-gray-600">
-                            Welcome to Future Way Consultants, a leading immigration consultancy and services firm dedicated to guiding individuals towards pursuing higher education overseas. At Future Way, we believe in the transformative power of education and the endless possibilities it can unlock.
+                            Welcome to MyFutureWay Consultants, a leading immigration consultancy and services firm dedicated to guiding individuals towards pursuing higher education overseas. At Future Way, we believe in the transformative power of education and the endless possibilities it can unlock.
                         </p>
                     </div>
 
@@ -229,9 +237,9 @@ function About() {
                                 <article key={post.id} className="flex max-w-xl flex-col items-start justify-between hover:shadow-xl p-3 rounded-xl cursor-pointer">
 
                                     <div className="group relative">
-                                        <h3 className="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600 font-tekosans tracking-wider">
+                                        <h3 className="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600 font-tekosans tracking-wider ">
 
-                                            <span className="absolute inset-0 " />
+                                            <span className="absolute inset-0  " />
                                             {post.title}
 
                                         </h3>
@@ -251,17 +259,13 @@ function About() {
 
             <div className="bg-white py-24 sm:py-32">
 
-
-
-
-
                 <div className="mx-auto max-w-7xl px-6 lg:px-8">
                     <div className="mx-auto lg:mx-0">
-                        <p className="mt-2 text-3xl font-bold text-gray-900 sm:text-4xl font-tekosans tracking-wider">
+                        <p className="mt-2 text-3xl font-bold  text-[#20B486] sm:text-4xl font-tekosans tracking-wider">
                             Our Motto
                         </p>
                         <p className="mt-6 text-lg leading-8 text-gray-600">
-                            At Future Way Consultants, our guiding principles are encapsulated in four core mottos. These mottos encapsulate our dedication to providing unparalleled services in the realm of higher education consultancy. Each motto reflects our commitment to excellence, fostering connections, and creating boundless opportunities for our clients. Our mission is to empower ambitions and embrace global excellence, ensuring that every individual's educational journey is met with personalized guidance and unwavering support.
+                            At MyFutureWay Consultants, our guiding principles are encapsulated in four core mottos. These mottos encapsulate our dedication to providing unparalleled services in the realm of higher education consultancy. Each motto reflects our commitment to excellence, fostering connections, and creating boundless opportunities for our clients. Our mission is to empower ambitions and embrace global excellence, ensuring that every individual's educational journey is met with personalized guidance and unwavering support.
                         </p>
                     </div>
 
@@ -272,8 +276,8 @@ function About() {
                                 {features.map((feature) => (
                                     <div key={feature.name} className="relative pl-16">
                                         <dt className=" tracking-wider font-semibold leading-7 text-gray-900 font-tekosans text-xl">
-                                            <div className="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-600">
-                                                <feature.icon className="h-6 w-6 text-white" aria-hidden="true" />
+                                            <div className="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg">
+                                                <feature.icon className="h-6 w-6  text-[#20B486] " aria-hidden="true" />
                                             </div>
                                             {feature.name}
                                         </dt>
@@ -302,19 +306,34 @@ function About() {
 
 
             {/* connect from */}
-            <div>
-                <div ref={contactRef} className="flex flex-col w-full lg:flex-row p-5">
-                    <div className="grid flex-grow  card  rounded-box place-items-center"> <div
-                        className="absolute inset-x-0 top-[-10rem] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[-20rem]"
-                        aria-hidden="true">
+            <div ref={contactRef} className='w-full bg-white py-24 mt-24 mx-auto max-w-7xl px-6 lg:px-8' >
+
+                <div className='w-full py-24'>
+                    <div className='md:max-w-[1480px] m-auto grid md:grid-cols-2 gap-8 max-w-[600px] items-center  px-4 md:px-0'>
+
+                        <img src='https://images.unsplash.com/photo-1462536943532-57a629f6cc60?q=80&w=2073&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' className="w-[650px] mx-auto rounded-3xl" />
+
+
+                        <div>
+                            <h1 className='py-2  text-3xl font-semibold'> <span className='text-[#20B486]'>Get in </span> Touch </h1>
+                            <p className='py-2 text-lg text-gray-600'> Have questions or need assistance? We're here to help!<br></br> Reach out to us for personalized support and information about our consultancy services. <span className='text-[#20B486] font-bold'>Your future journey begins with a simple message.</span></p>
+                            <button onClick={() => {
+                                scrollToSection(Formref)
+
+                            }} className='max-[780px]:w-full my-4 px-8 py-5 rounded-md bg-[#20B486] text-white font-bold'>Connect</button>
+
+
+                        </div>
+
+
+
 
                     </div>
-                        <Connect />
 
-                    </div>
 
-                    <div className="grid flex-grow  card  rounded-box place-items-center"> <Form /></div>
                 </div>
+                <div ref={Formref} className="grid flex-grow  card  rounded-box place-items-center"> <Form /></div>
+
             </div>
         </div>
     )
