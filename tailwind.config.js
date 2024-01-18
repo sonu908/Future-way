@@ -8,6 +8,7 @@ export default {
       fontFamily: {
         'tekosans': ['Teko', 'sans-serif'],
         'abrill-fatface': ['Abril Fatface', 'serif'],
+        'Barlow':["Barlow", 'sans-serif']
       },
     },
   },

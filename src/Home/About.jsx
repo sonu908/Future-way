@@ -117,7 +117,6 @@ function About() {
                             </button>
                         </div>
                         <div className="hidden lg:flex lg:gap-x-12">
-
                             <button className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-[#20B486] hover:"
                                 onClick={() => scrollToSection(homeRef)}>
                                 Home
@@ -130,7 +129,6 @@ function About() {
                                 onClick={() => scrollToSection(contactRef)}>
                                 Contact
                             </button>
-
                         </div>
 
                     </nav>
@@ -176,9 +174,7 @@ function About() {
                                             }}>
                                             Contact
                                         </button>
-
                                     </div>
-
                                 </div>
                             </div>
                         </Dialog.Panel>
@@ -190,7 +186,6 @@ function About() {
 
                 <div className='w-full bg-white py-24 mt-24 mx-auto max-w-7xl px-6 lg:px-8' >
                     <Hero scrollToContact={scrollToContact} />
-
                 </div>
             </div>
 
@@ -205,14 +200,10 @@ function About() {
                             Welcome to MyFutureWay Consultants, a leading immigration consultancy and services firm dedicated to guiding individuals towards pursuing higher education overseas. At Future Way, we believe in the transformative power of education and the endless possibilities it can unlock.
                         </p>
                     </div>
-
                     <div>
-
                         <div className="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 border-t border-gray-200 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3">
-
                             {posts.map((post) => (
                                 <article key={post.id} className="flex max-w-xl flex-col items-start justify-between hover:shadow-xl p-3 rounded-xl cursor-pointer">
-
                                     <div className="group relative">
                                         <h3 className="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600 font-tekosans tracking-wider ">
 
@@ -222,12 +213,10 @@ function About() {
                                         </h3>
                                         <p className="mt-5 line-clamp-3 text-sm leading-6 text-gray-600">{post.description}</p>
                                     </div>
-
                                 </article>
                             ))}
                         </div>
                     </div>
-
                 </div>
             </div>
 
@@ -235,7 +224,6 @@ function About() {
             {/* what we do */}
 
             <div className="bg-white py-24 sm:py-32">
-
                 <div className="mx-auto max-w-7xl px-6 lg:px-8">
                     <div className="mx-auto lg:mx-0">
                         <p className="mt-2 text-3xl font-bold  text-[#20B486] sm:text-4xl font-tekosans tracking-wider">
@@ -245,9 +233,7 @@ function About() {
                             At MyFutureWay Consultants, our guiding principles are encapsulated in four core mottos. These mottos encapsulate our dedication to providing unparalleled services in the realm of higher education consultancy. Each motto reflects our commitment to excellence, fostering connections, and creating boundless opportunities for our clients. Our mission is to empower ambitions and embrace global excellence, ensuring that every individual's educational journey is met with personalized guidance and unwavering support.
                         </p>
                     </div>
-
                     <div>
-
                         <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-7xl">
                             <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-2 lg:gap-y-16">
                                 {features.map((feature) => (
@@ -264,33 +250,19 @@ function About() {
                             </dl>
                         </div>
                     </div>
-
                 </div>
-
-
-
-
-
             </div>
-
-
-
             {/* what we do with pics */}
             <div className="bg-white">
                 <Features />
             </div>
-
-
 
             {/* connect from */}
             <div ref={contactRef} className='w-full bg-white py-24 mt-24 mx-auto max-w-7xl px-6 lg:px-8' >
 
                 <div className='w-full py-24'>
                     <div className='md:max-w-[1480px] m-auto grid md:grid-cols-2 gap-8 max-w-[600px] items-center  px-4 md:px-0'>
-
                         <img src='https://images.unsplash.com/photo-1462536943532-57a629f6cc60?q=80&w=2073&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' className="w-[650px] mx-auto rounded-3xl" />
-
-
                         <div>
                             <h1 className='py-2  text-3xl font-semibold'> <span className='text-[#20B486]'>Get in </span> Touch </h1>
                             <p className='py-2 text-lg text-gray-600'> Have questions or need assistance? We're here to help!<br></br> Reach out to us for personalized support and information about our consultancy services. <span className='text-[#20B486] font-bold'>Your future journey begins with a simple message.</span></p>
@@ -298,19 +270,10 @@ function About() {
                                 scrollToSection(Formref)
 
                             }} className='max-[780px]:w-full my-4 px-8 py-5 rounded-md bg-[#20B486] text-white font-bold'>Connect</button>
-
-
                         </div>
-
-
-
-
                     </div>
-
-
                 </div>
                 <div ref={Formref} className="grid flex-grow  card  rounded-box place-items-center"> <Form /></div>
-
             </div>
         </div>
     )

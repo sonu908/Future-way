@@ -24,8 +24,6 @@ const featuresTwo = [
         description: 'Expert counseling and support for navigating educational journeys, fostering success both nationally and internationally.'
     }
 ];
-
-
 function Features() {
     return (
 
@@ -33,7 +31,6 @@ function Features() {
             <h2 className="text-3xl font-bold tracking-wider font-tekosans  text-[#20B486] sm:text-4xl">Why us?</h2>
             <p className="mt-4 text-gray-500">
                 At MyFutureWay Consultants, we stand out as the preferred choice for those seeking higher education due to our commitment to providing comprehensive guidance tailored to both global and local educational aspirations. Our seasoned professionals bring a wealth of expertise, ensuring a smooth and successful immigration process for those looking to study abroad or within India.                        </p>
-
             <dl className="mt-16 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 sm:gap-y-16 lg:gap-x-8">
                 {featuresTwo.map((feature) => (
                     <div key={feature.name} className="border-t border-gray-200 pt-4 ">
