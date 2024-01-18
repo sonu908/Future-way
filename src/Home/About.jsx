@@ -192,33 +192,6 @@ function About() {
                     <Hero scrollToContact={scrollToContact} />
 
                 </div>
-
-                {/* head */}
-                {/* <div className="relative isolate px-6 pt-14 lg:px-8">
-
-                    <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
-                        <div className="text-center">
-                            <p className=" text-5xl mt-20 font-lighter tracking-tighter text-gray-900 sm:text-8xl lg:mt-0 font-abrill-fatface">
-                                myfutureway
-                            </p>
-
-                            <div className="mt-4 flex items-center justify-center gap-x-6" onClick={() => {
-                                scrollToSection(contactRef)
-                                setMobileMenuOpen(false);
-                            }}>
-
-                                <a href="#" className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 bg-[#20B486] hover:"
-                                >
-                                    A bright future begins here <span aria-hidden="true">→</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-*/}
-
-
             </div>
 
 
