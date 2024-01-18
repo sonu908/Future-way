@@ -85,7 +85,11 @@ function About() {
         ref.current.scrollIntoView({ behavior: 'smooth' });
     };
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-
+    const scrollToContact = () => {
+        if (contactRef.current) {
+            contactRef.current.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
     return (
 
         <div >
@@ -185,7 +189,7 @@ function About() {
                 {/* hero */}
 
                 <div className='w-full bg-white py-24 mt-24 mx-auto max-w-7xl px-6 lg:px-8' >
-                    <Hero />
+                    <Hero scrollToContact={scrollToContact} />
 
                 </div>
 
