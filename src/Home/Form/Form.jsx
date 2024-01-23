@@ -131,7 +131,7 @@ function Form() {
     }
 
     try {
-      const response = await fetch("http://localhost:3001/submitForm", {
+      const response = await fetch("https://myfutureway-backend.onrender.com/submitForm", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -259,14 +259,14 @@ function Form() {
             </label>
             <div className="relative mt-2.5">
               <input
-                type="tel"
+                type="number"
                 name="phoneNumber"
                 id="phone-number"
                 autoComplete="tel"
                 value={formData.phoneNumber}
                 onChange={handleInputChange}
                 className=" block w-full rounded-md border-0 px-3.5 py-2 pl-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-              />
+             />
             </div>
             {formErrors.phoneNumber && (
               <p className="text-red-500 text-sm">{formErrors.phoneNumber}</p>
