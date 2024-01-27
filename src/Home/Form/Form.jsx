@@ -464,7 +464,7 @@ function Form() {
             </label>
             <div className="mt-2.5">
               <input
-                type="text"
+                type="number"
                 name="tenthPercentage"
                 id="10th-percentage"
                 value={formData.tenthPercentage}
@@ -510,7 +510,7 @@ function Form() {
             </label>
             <div className="mt-2.5">
               <input
-                type="text"
+                type="number"
                 name="twelfthPercentage"
                 id="12th-percentage"
                 value={formData.twelfthPercentage}
