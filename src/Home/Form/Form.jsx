@@ -24,13 +24,37 @@ function Form() {
     // Add other form fields as needed...
   });
 
+
+
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setFormData((prevData) => ({
-      ...prevData,
-      [name]: value,
-    }));
+
+    // Enforce numeric input for specific fields
+    if (["phoneNumber", "pincode", "tenthPercentage", "twelfthPercentage"].includes(name)) {
+      // Allow only numeric values
+      const numericValue = value.replace(/\D/g, ''); // Remove non-numeric characters
+      setFormData((prevData) => ({
+        ...prevData,
+        [name]: numericValue,
+      }));
+    } else {
+      setFormData((prevData) => ({
+        ...prevData,
+        [name]: value,
+      }));
+    }
+
+    // Enforce length limit for specific fields
+    if (["tenthPercentage", "twelfthPercentage"].includes(name)) {
+      // Limit the length to 2 characters
+      const limitedValue = value.slice(0, 2);
+      setFormData((prevData) => ({
+        ...prevData,
+        [name]: limitedValue,
+      }));
+    }
   };
+
 
   const validateForm = () => {
     const newErrors = {};
@@ -59,7 +83,6 @@ function Form() {
       errors.motherName =
         "Mother's Name should only contain characters and space!";
     }
-
     if (!formData.fatherName) {
       errors.fatherName = "Father's Name is required!";
     } else if (!regex.test(formData.fatherName)) {
@@ -171,6 +194,7 @@ function Form() {
       console.error("Error submitting form", error);
       setSuccessMessage(""); // Clear success message if any
       setFailureMessage("Error sending");
+   
     }
   };
 
@@ -198,7 +222,7 @@ function Form() {
                 id="name"
                 value={formData.name}
                 onChange={handleInputChange}
-                className=" block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                className=" block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6"
               />
             </div>
             {formErrors.name && (
@@ -219,7 +243,7 @@ function Form() {
                 id="fatherName"
                 value={formData.fatherName}
                 onChange={handleInputChange}
-                className=" block w-full rounded-md border-0 px-3.5 py-2 text-gray-900m ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                className=" block w-full rounded-md border-0 px-3.5 py-2 text-gray-900m ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6"
               />
             </div>
             {formErrors.fatherName && (
@@ -242,7 +266,7 @@ function Form() {
                 id="mother-name"
                 value={formData.motherName}
                 onChange={handleInputChange}
-                className=" block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                className=" block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6"
               />
             </div>
             {formErrors.motherName && (
@@ -259,14 +283,15 @@ function Form() {
             </label>
             <div className="relative mt-2.5">
               <input
-                type="number"
+                type="tel"
                 name="phoneNumber"
                 id="phone-number"
                 autoComplete="tel"
+                maxLength="10"
                 value={formData.phoneNumber}
                 onChange={handleInputChange}
-                className=" block w-full rounded-md border-0 px-3.5 py-2 pl-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-             />
+                className=" block w-full rounded-md border-0 px-3.5 py-2 pl-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6"
+              />
             </div>
             {formErrors.phoneNumber && (
               <p className="text-red-500 text-sm">{formErrors.phoneNumber}</p>
@@ -287,7 +312,7 @@ function Form() {
                 autoComplete="email"
                 value={formData.email}
                 onChange={handleInputChange}
-                className=" block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                className=" block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6"
               />
             </div>
             {formErrors.email && (
@@ -317,7 +342,7 @@ function Form() {
                     .split("T")[0]
                 } // Set the maximum date to 10 years ago
                 min="1920-01-01" // Set a reasonable minimum date, you can adjust it as needed
-                className=" block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                className=" block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6"
               />
             </div>
             {formErrors.dateOfBirth && (
@@ -377,7 +402,7 @@ function Form() {
                 value={formData.address}
                 onChange={handleInputChange}
                 rows={4}
-                className=" block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                className=" block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6"
               />
             </div>
             {formErrors.address && (
@@ -394,12 +419,13 @@ function Form() {
             </label>
             <div className="mt-2.5">
               <input
-                type="number"
+                type=""
                 name="pincode"
+                pattern="[0-9]+"
                 id="pincode"
                 value={formData.pincode}
                 onChange={handleInputChange}
-                className=" block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                className=" block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6"
               />
             </div>
             {formErrors.pincode && (
@@ -420,7 +446,7 @@ function Form() {
                 id="10th-school-name"
                 value={formData.tenthSchoolName}
                 onChange={handleInputChange}
-                className=" block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                className=" block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6"
               />
             </div>
             {formErrors.tenthSchoolName && (
@@ -438,12 +464,12 @@ function Form() {
             </label>
             <div className="mt-2.5">
               <input
-                type="number"
+                type="text"
                 name="tenthPercentage"
                 id="10th-percentage"
                 value={formData.tenthPercentage}
                 onChange={handleInputChange}
-                className=" block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                className=" block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6"
               />
             </div>
             {formErrors.tenthPercentage && (
@@ -466,7 +492,7 @@ function Form() {
                 id="12th-school-name"
                 value={formData.twelfthSchoolName}
                 onChange={handleInputChange}
-                className=" block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                className=" block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6"
               />
             </div>
             {formErrors.twelfthSchoolName && (
@@ -484,12 +510,12 @@ function Form() {
             </label>
             <div className="mt-2.5">
               <input
-                type="number"
+                type="text"
                 name="twelfthPercentage"
                 id="12th-percentage"
                 value={formData.twelfthPercentage}
                 onChange={handleInputChange}
-                className=" block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                className=" block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6"
               />
             </div>
             {formErrors.twelfthPercentage && (
@@ -511,7 +537,7 @@ function Form() {
                 name="twelfthResult"
                 value={formData.twelfthResult}
                 onChange={handleInputChange}
-                className=" block w-full rounded-md border-0 bg-transparent bg-none px-3.5 py-2 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm"
+                className=" block w-full rounded-md border-0 bg-transparent bg-none px-3.5 py-2 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset sm:text-sm"
               >
                 <option value="pass">Pass</option>
                 <option value="fail">Fail</option>
@@ -531,10 +557,11 @@ function Form() {
         <div className="flex flex-col items-center mt-10">
           <button
             type="submit"
-            className=" block w-full rounded-md  bg-[#20B486] border  px-3.5 py-2.5 text-center text-sm font-semibold text-white hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 "
-          >
-            Send
-          </button>
+            className="block w-full rounded-md bg-[#20B486] border px-3.5 py-2.5 text-center text-sm font-semibold text-white hover:shadow-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 "
+           
+            >
+             Send
+            </button>
           {successMessage && (
             <div className="text-green-600 font-semibold mt-2">
               {successMessage}
@@ -547,6 +574,7 @@ function Form() {
             </div>
           )}
         </div>
+
       </form>
     </div>
   );
