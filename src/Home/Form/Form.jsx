@@ -41,7 +41,7 @@ function Form() {
             className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6"
           />
 
-          <label htmlFor="ugBranch" className="mt-5 block text-sm font-semibold leading-6  text-black">Undergraduate Course:</label>
+          <label htmlFor="ugCourse" className="mt-5 block text-sm font-semibold leading-6  text-black">Undergraduate Course:</label>
           <input
             type="text"
             name="ugCourse"
