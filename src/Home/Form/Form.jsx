@@ -30,7 +30,7 @@ function Form() {
     if (formData.isPostgraduate === 'yes') {
       return (
         <div>
-          <label htmlFor="ugCollege">Undergraduate College:</label>
+          <label htmlFor="ugCollege" className="block text-sm font-semibold leading-6  text-black">Undergraduate College:</label>
           <input
             type="text"
             name="ugCollege"
@@ -40,7 +40,7 @@ function Form() {
             className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6"
           />
           
-          <label htmlFor="ugPercentage">Undergraduate Percentage:</label>
+          <label htmlFor="ugPercentage" className="block text-sm font-semibold leading-6  text-black">Undergraduate Percentage:</label>
           <input
             type="number"
             name="ugPercentage"
@@ -583,7 +583,7 @@ function Form() {
             <p className="text-red-500 text-sm">{formErrors.twelfthResult}</p>
           )}
         </div>
- <label htmlFor="isPostgraduate">Are you a postgraduate?</label>
+ <label htmlFor="isPostgraduate" className="block text-sm font-semibold leading-6  text-black">Are you a postgraduate?</label>
       <select
         id="isPostgraduate"
         name="isPostgraduate"
