@@ -21,10 +21,12 @@ function Form() {
     twelfthPercentage: "",
     twelfthResult: "pass", // set default value for twelfthResult
     gender: "", // add gender to formData
-    // Add other form fields as needed...
+    isPostgraduate: "no",
+    ugCollege: "", // Added ugCollege state
+    ugPercentage: "", // Added ugPercentage state
   });
 
-  const renderUGFields = () => {
+   const renderUGFields = () => {
     if (formData.isPostgraduate === 'yes') {
       return (
         <div>
