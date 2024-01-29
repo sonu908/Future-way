@@ -593,7 +593,7 @@ function Form() {
             <p className="text-red-500 text-sm">{formErrors.twelfthResult}</p>
           )}
         </div>
-        <label htmlFor="isPostgraduate" className="mt-5 block text-sm font-semibold leading-6  text-black">Are you a postgraduate?</label>
+        <label htmlFor="isPostgraduate" className="mt-5 block text-sm font-semibold leading-6  text-black">Applying for PG?</label>
         <select
           id="isPostgraduate"
           name="isPostgraduate"
