@@ -28,41 +28,161 @@ function Form() {
   });
 
   const renderUGFields = () => {
-    if (formData.isPostgraduate === 'yes') {
+    if (selectedOption === 'Bachelors Degree' || selectedOption === 'Medical' || selectedOption === 'Engineering') {
+      return (
+        <div>
+          <div >
+
+
+            <div>
+              <label
+                htmlFor="12th-percentage"
+                className="block text-sm font-semibold leading-6  text-black"
+              >
+                12th Percentage
+              </label>
+              <div className="mt-2.5">
+                <input
+                  type="number"
+                  name="twelfthPercentage"
+                  id="12th-percentage"
+                  value={formData.twelfthPercentage}
+                  onChange={handleInputChange}
+                  className=" block w-full rounded-md border-0 px-3.5 py-2 text-black-900 ring-1 ring-inset ring-black-300 placeholder:text-black-400 focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6"
+                />
+              </div>
+              {formErrors.twelfthPercentage && (
+                <p className="text-red-500 text-sm">
+                  {formErrors.twelfthPercentage}
+                </p>
+              )}
+            </div>
+          </div></div>
+
+      );
+    } else if (selectedOption === 'Masters Degree') {
       return (
         <div className="gap-2">
-          <label htmlFor="ugCollege" className="mt-5 block text-sm font-semibold leading-6  text-black">Undergraduate College:</label>
+          <label htmlFor="ugCollege" className="mt-5 block text-sm font-semibold leading-6 text-black">
+            Undergraduate College:
+          </label>
           <input
             type="text"
             name="ugCollege"
             id="ugCollege"
             value={formData.ugCollege}
             onChange={handleInputChange}
-            className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6"
+            className="block w-full rounded-md border-0 px-3.5 py-2 text-black-900 ring-1 ring-inset ring-black-300 placeholder:text-black-400 focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6"
           />
 
-          <label htmlFor="ugBranch" className="mt-5 block text-sm font-semibold leading-6  text-black">Undergraduate Course:</label>
+          <label htmlFor="ugBranch" className="mt-5 block text-sm font-semibold leading-6 text-black">
+            Undergraduate Stream:
+          </label>
           <input
             type="text"
             name="ugBranch"
             id="ugBranch"
-            value={formData.ugPercentage}
+            value={formData.ugBranch}
             onChange={handleInputChange}
-            className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6"
+            className="block w-full rounded-md border-0 px-3.5 py-2 text-black-900 ring-1 ring-inset ring-black-300 placeholder:text-black-400 focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6"
           />
-          <label htmlFor="ugPercentage" className="mt-5 block text-sm font-semibold leading-6  text-black">Undergraduate Percentage:</label>
+
+          <label htmlFor="ugPercentage" className="mt-5 block text-sm font-semibold leading-6 text-black">
+            Undergraduate Percentage:
+          </label>
           <input
             type="number"
             name="ugPercentage"
             id="ugPercentage"
             value={formData.ugPercentage}
             onChange={handleInputChange}
-            className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6"
+            className="block w-full rounded-md border-0 px-3.5 py-2 text-black-900 ring-1 ring-inset ring-black-300 placeholder:text-black-400 focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6"
           />
         </div>
       );
+    } else {
+      return (
+
+        <div>
+
+          <div >
+            <label
+              htmlFor="10th-result"
+              className="block text-sm font-semibold leading-6  text-black"
+            >
+              10th Result (Pass/Fail)
+            </label>
+            <div className="mt-2.5">
+              <select
+                id="10th-result"
+                name="tenthResult"
+                value={formData.tenthResult}
+                onChange={handleInputChange}
+                className=" block w-full rounded-md border-0 bg-transparent bg-none px-3.5 py-2 text-black-900 ring-1 ring-inset ring-black-300 placeholder:text-black-400 focus:ring-2 focus:ring-inset sm:text-sm"
+              >
+                <option value="pass">Pass</option>
+                <option value="fail">Fail</option>
+              </select>
+              {formErrors.tenthResult && (
+                <p className="text-red-500 text-sm">
+                  {formErrors.tenthResult}
+                </p>
+              )}
+            </div>
+            <label
+              htmlFor="10th-percentage"
+              className="block text-sm font-semibold leading-6  text-black"
+            >
+              10th Percentage
+            </label>
+            <div className="mt-2.5">
+              <input
+                type="number"
+                name="tenthPercentage"
+                id="10th-percentage"
+                value={formData.tenthPercentage}
+                onChange={handleInputChange}
+                className=" block w-full rounded-md border-0 px-3.5 py-2 text-black-900 ring-1 ring-inset ring-black-300 placeholder:text-black-400 focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6"
+              />
+            </div>
+            {
+              formErrors.tenthPercentage && (
+                <p className="text-red-500 text-sm">
+                  {formErrors.tenthPercentage}
+                </p>
+              )
+            }
+          </div>
+
+          <div >
+
+            <div>
+              <label
+                htmlFor="12th-percentage"
+                className="block text-sm font-semibold leading-6  text-black"
+              >
+                12th Percentage
+              </label>
+              <div className="mt-2.5">
+                <input
+                  type="number"
+                  name="twelfthPercentage"
+                  id="12th-percentage"
+                  value={formData.twelfthPercentage}
+                  onChange={handleInputChange}
+                  className=" block w-full rounded-md border-0 px-3.5 py-2 text-black-900 ring-1 ring-inset ring-black-300 placeholder:text-black-400 focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6"
+                />
+              </div>
+              {formErrors.twelfthPercentage && (
+                <p className="text-red-500 text-sm">
+                  {formErrors.twelfthPercentage}
+                </p>
+              )}
+            </div>
+          </div>
+        </div>
+      );
     }
-    return null;
   };
 
 
@@ -70,7 +190,7 @@ function Form() {
     const { name, value } = e.target;
 
     // Enforce numeric input for specific fields
-    if (["phoneNumber", "pincode", "tenthPercentage", "twelfthPercentage"].includes(name)) {
+    if (["phoneNumber", "tenthPercentage", "twelfthPercentage"].includes(name)) {
       // Allow only numeric values
       const numericValue = value.replace(/\D/g, ''); // Remove non-numeric characters
       setFormData((prevData) => ({
@@ -117,26 +237,11 @@ function Form() {
       errors.name = "Name should only contain characters and space!";
     }
 
-    if (!formData.motherName) {
-      errors.motherName = "Mother's Name is required!";
-    } else if (!regex.test(formData.motherName)) {
-      errors.motherName =
-        "Mother's Name should only contain characters and space!";
-    }
-    if (!formData.fatherName) {
-      errors.fatherName = "Father's Name is required!";
-    } else if (!regex.test(formData.fatherName)) {
-      errors.fatherName =
-        "Father's Name should only contain characters and space!";
-    }
 
     if (!formData.dateOfBirth) {
       errors.dateOfBirth = "Date of Birth is required!";
     }
 
-    if (!formData.tenthSchoolName) {
-      errors.tenthSchoolName = "School Name is required!";
-    }
 
     if (!formData.twelfthSchoolName) {
       errors.twelfthSchoolName = "School Name is required!";
@@ -152,11 +257,7 @@ function Form() {
       errors.email = "Invalid email address!";
     }
 
-    // Validation for pincode
-    const regexPincode = /^\d{6}$/;
-    if (formData.pincode && !regexPincode.test(formData.pincode)) {
-      errors.pincode = "Invalid pincode!";
-    }
+
 
     // Validation for percentage (assuming it should be a number between 0 and 100)
     const regexPercentage = /^\d{2}$/;
@@ -210,14 +311,12 @@ function Form() {
         // Clear form data
         setFormData({
           name: "",
-          fatherName: "",
-          motherName: "",
+
           phoneNumber: "",
           email: "",
           dateOfBirth: "",
           address: "",
-          pincode: "",
-          tenthSchoolName: "",
+
           tenthPercentage: "",
           twelfthSchoolName: "",
           twelfthPercentage: "",
@@ -236,6 +335,13 @@ function Form() {
       setFailureMessage("Error sending");
 
     }
+  };
+
+
+  const [selectedOption, setSelectedOption] = useState('');
+
+  const handleOptionChange = (e) => {
+    setSelectedOption(e.target.value);
   };
 
   return (
@@ -262,64 +368,23 @@ function Form() {
                 id="name"
                 value={formData.name}
                 onChange={handleInputChange}
-                className=" block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6"
+                className=" block w-full rounded-md border-0 px-3.5 py-2 text-black-900 ring-1 ring-inset ring-black-300 placeholder:text-black-400 focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6"
               />
             </div>
             {formErrors.name && (
               <p className="text-red-500 text-sm">{formErrors.name}</p>
             )}
           </div>
-          <div>
-            <label
-              htmlFor="fatherName"
-              className="block text-sm font-semibold leading-6  text-black"
-            >
-              Father's Name
-            </label>
-            <div className="mt-2.5">
-              <input
-                type="text"
-                name="fatherName"
-                id="fatherName"
-                value={formData.fatherName}
-                onChange={handleInputChange}
-                className=" block w-full rounded-md border-0 px-3.5 py-2 text-gray-900m ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6"
-              />
-            </div>
-            {formErrors.fatherName && (
-              <p className="text-red-500 text-sm">{formErrors.fatherName}</p>
-            )}
-          </div>
 
-          <div>
-            <label
-              htmlFor="motherName"
-              className="block text-sm font-semibold leading-6  text-black"
-            >
-              Mother's Name
-            </label>
 
-            <div className="mt-2.5">
-              <input
-                type="text"
-                name="motherName"
-                id="mother-name"
-                value={formData.motherName}
-                onChange={handleInputChange}
-                className=" block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6"
-              />
-            </div>
-            {formErrors.motherName && (
-              <p className="text-red-500 text-sm">{formErrors.motherName}</p>
-            )}
-          </div>
+
 
           <div>
             <label
               htmlFor="phoneNumber"
               className="block text-sm font-semibold leading-6  text-black"
             >
-              Phone Number
+              Contact Number
             </label>
             <div className="relative mt-2.5">
               <input
@@ -330,7 +395,7 @@ function Form() {
                 maxLength="10"
                 value={formData.phoneNumber}
                 onChange={handleInputChange}
-                className=" block w-full rounded-md border-0 px-3.5 py-2 pl-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6"
+                className=" block w-full rounded-md border-0 px-3.5 py-2 pl-20 text-black-900 ring-1 ring-inset ring-black-300 placeholder:text-black-400 focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6"
               />
             </div>
             {formErrors.phoneNumber && (
@@ -352,7 +417,7 @@ function Form() {
                 autoComplete="email"
                 value={formData.email}
                 onChange={handleInputChange}
-                className=" block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6"
+                className=" block w-full rounded-md border-0 px-3.5 py-2 text-black-900 ring-1 ring-inset ring-black-300 placeholder:text-black-400 focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6"
               />
             </div>
             {formErrors.email && (
@@ -382,7 +447,7 @@ function Form() {
                     .split("T")[0]
                 } // Set the maximum date to 10 years ago
                 min="1920-01-01" // Set a reasonable minimum date, you can adjust it as needed
-                className=" block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6"
+                className=" block w-full rounded-md border-0 px-3.5 py-2 text-black-900 ring-1 ring-inset ring-black-300 placeholder:text-black-400 focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6"
               />
             </div>
             {formErrors.dateOfBirth && (
@@ -442,7 +507,7 @@ function Form() {
                 value={formData.address}
                 onChange={handleInputChange}
                 rows={4}
-                className=" block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6"
+                className=" block w-full rounded-md border-0 px-3.5 py-2 text-black-900 ring-1 ring-inset ring-black-300 placeholder:text-black-400 focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6"
               />
             </div>
             {formErrors.address && (
@@ -450,162 +515,130 @@ function Form() {
             )}
           </div>
 
-          <div>
-            <label
-              htmlFor="pincode"
-              className="block text-sm font-semibold leading-6  text-black"
-            >
-              Pin Code
-            </label>
-            <div className="mt-2.5">
-              <input
-                type=""
-                name="pincode"
-                pattern="[0-9]+"
-                id="pincode"
-                value={formData.pincode}
-                onChange={handleInputChange}
-                className=" block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6"
-              />
-            </div>
-            {formErrors.pincode && (
-              <p className="text-red-500 text-sm">{formErrors.pincode}</p>
-            )}
-          </div>
-          <div>
-            <label
-              htmlFor="tenthSchoolName"
-              className="block text-sm font-semibold leading-6  text-black"
-            >
-              10th School Name
-            </label>
-            <div className="mt-2.5">
-              <input
-                type="text"
-                name="tenthSchoolName"
-                id="10th-school-name"
-                value={formData.tenthSchoolName}
-                onChange={handleInputChange}
-                className=" block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6"
-              />
-            </div>
-            {formErrors.tenthSchoolName && (
-              <p className="text-red-500 text-sm">
-                {formErrors.tenthSchoolName}
-              </p>
-            )}
-          </div>
-          <div>
-            <label
-              htmlFor="10th-percentage"
-              className="block text-sm font-semibold leading-6  text-black"
-            >
-              10th Percentage
-            </label>
-            <div className="mt-2.5">
-              <input
-                type="number"
-                name="tenthPercentage"
-                id="10th-percentage"
-                value={formData.tenthPercentage}
-                onChange={handleInputChange}
-                className=" block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6"
-              />
-            </div>
-            {formErrors.tenthPercentage && (
-              <p className="text-red-500 text-sm">
-                {formErrors.tenthPercentage}
-              </p>
-            )}
-          </div>
-          <div>
-            <label
-              htmlFor="12th-school-name"
-              className="block text-sm font-semibold leading-6 text-black"
-            >
-              12th School Name
-            </label>
-            <div className="mt-2.5">
-              <input
-                type="text"
-                name="twelfthSchoolName"
-                id="12th-school-name"
-                value={formData.twelfthSchoolName}
-                onChange={handleInputChange}
-                className=" block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6"
-              />
-            </div>
-            {formErrors.twelfthSchoolName && (
-              <p className="text-red-500 text-sm">
-                {formErrors.twelfthSchoolName}
-              </p>
-            )}
-          </div>
-          <div>
-            <label
-              htmlFor="12th-percentage"
-              className="block text-sm font-semibold leading-6  text-black"
-            >
-              12th Percentage
-            </label>
-            <div className="mt-2.5">
-              <input
-                type="number"
-                name="twelfthPercentage"
-                id="12th-percentage"
-                value={formData.twelfthPercentage}
-                onChange={handleInputChange}
-                className=" block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6"
-              />
-            </div>
-            {formErrors.twelfthPercentage && (
-              <p className="text-red-500 text-sm">
-                {formErrors.twelfthPercentage}
-              </p>
-            )}
-          </div>
-          <div >
-            <label
-              htmlFor="12th-result"
-              className="block text-sm font-semibold leading-6  text-black"
-            >
-              12th Result (Pass/Fail)
-            </label>
-            <div className="mt-2.5">
-              <select
-                id="12th-result"
-                name="twelfthResult"
-                value={formData.twelfthResult}
-                onChange={handleInputChange}
-                className=" block w-full rounded-md border-0 bg-transparent bg-none px-3.5 py-2 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset sm:text-sm"
-              >
-                <option value="pass">Pass</option>
-                <option value="fail">Fail</option>
-              </select>
-              {formErrors.twelfthResult && (
-                <p className="text-red-500 text-sm">
-                  {formErrors.twelfthResult}
-                </p>
-              )}
-            </div>
-          </div>
           {formErrors.twelfthResult && (
             <p className="text-red-500 text-sm">{formErrors.twelfthResult}</p>
           )}
         </div>
-        <label htmlFor="isPostgraduate" className="mt-5 block text-sm font-semibold leading-6  text-black">Are you a postgraduate?</label>
+        <div>
+          <label htmlFor="isPostgraduate" className="mt-5 block text-sm font-semibold leading-6  text-black">Looking For</label>
+          <ul className="items-center w-full text-sm font-medium text-black-900 bg-white border border-black-200 rounded-lg sm:flex">
+            <li className="w-full border-b border-black-200 sm:border-b-0 sm:border-r dark:border-black-600">
+              <div className="flex items-center ps-3">
+                <input
+                  id="horizontal-list-radio-license"
+                  type="radio"
+                  value="Diploma"
+                  name="list-radio"
+                  onChange={handleOptionChange}
+                  className="w-4 h-4 text-blue-600 bg-black-100 border-black-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-black-700 dark:focus:ring-offset-black-700 focus:ring-2 dark:bg-black-600 dark:border-black-500"
+                />
+                <label
+                  htmlFor="horizontal-list-radio-license"
+                  className="w-full py-3 ms-2 text-sm font-medium text-black-900 dark:text-black-300"
+                >
+                  Diploma
+                  {/* need 10th p / f  if pass +2 Stream and percenatge else 10th per  */}
+                </label>
+              </div>
+            </li>
+
+            <li className="w-full border-b border-black-200 sm:border-b-0 sm:border-r dark:border-black-600">
+              <div className="flex items-center ps-3">
+                <input
+                  id="horizontal-list-radio-license"
+                  type="radio"
+                  value=" Bachelors Degree"
+                  name="list-radio"
+                  onChange={handleOptionChange}
+                  className="w-4 h-4 text-blue-600 bg-black-100 border-black-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-black-700 dark:focus:ring-offset-black-700 focus:ring-2 dark:bg-black-600 dark:border-black-500"
+                />
+                <label
+                  htmlFor="horizontal-list-radio-license"
+                  className="w-full py-3 ms-2 text-sm font-medium text-black-900 dark:text-black-300"
+                >
+                  Bachelors Degree
+                  {/* 10 and 12 stream and , percentage for both 10 and 12 */}
+                </label>
+              </div>
+            </li>
+            <li className="w-full border-b border-black-200 sm:border-b-0 sm:border-r dark:border-black-600">
+              <div className="flex items-center ps-3">
+                <input
+                  id="horizontal-list-radio-license"
+                  type="radio"
+                  value="Masters Degree"
+                  name="list-radio"
+                  onChange={handleOptionChange}
+                  className="w-4 h-4 text-blue-600 bg-black-100 border-black-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-black-700 dark:focus:ring-offset-black-700 focus:ring-2 dark:bg-black-600 dark:border-black-500"
+                />
+                <label
+                  htmlFor="horizontal-list-radio-license"
+                  className="w-full py-3 ms-2 text-sm font-medium text-black-900 dark:text-black-300"
+                >
+                  Masters Degree
+                  {/*  ug percentage and stream */}
+
+                </label>
+              </div>
+            </li>
+            <li className="w-full border-b border-black-200 sm:border-b-0 sm:border-r dark:border-black-600">
+              <div className="flex items-center ps-3">
+                <input
+                  id="horizontal-list-radio-license"
+                  type="radio"
+                  value="Medical"
+                  name="list-radio"
+                  onChange={handleOptionChange}
+                  className="w-4 h-4 text-blue-600 bg-black-100 border-black-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-black-700 dark:focus:ring-offset-black-700 focus:ring-2 dark:bg-black-600 dark:border-black-500"
+                />
+                <label
+                  htmlFor="horizontal-list-radio-license"
+                  className="w-full py-3 ms-2 text-sm font-medium text-black-900 dark:text-black-300"
+                >
+                  Medical
+                  {/* 10 and 12 stream and , percentage for both 10 and 12 */}
+
+                </label>
+              </div>
+            </li>
+            <li className="w-full border-b border-black-200 sm:border-b-0 sm:border-r dark:border-black-600">
+              <div className="flex items-center ps-3">
+                <input
+                  id="horizontal-list-radio-license"
+                  type="radio"
+                  value=" Engineering"
+                  name="list-radio"
+                  onChange={handleOptionChange}
+                  className="w-4 h-4 text-blue-600 bg-black-100 border-black-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-black-700 dark:focus:ring-offset-black-700 focus:ring-2 dark:bg-black-600 dark:border-black-500"
+                />
+                <label
+                  htmlFor="horizontal-list-radio-license"
+                  className="w-full py-3 ms-2 text-sm font-medium text-black-900 dark:text-black-300"
+                >
+                  Engineering
+                  {/* 10 and 12 stream and , percentage for both 10 and 12 */}
+
+                </label>
+              </div>
+            </li>
+          </ul>
+        </div>
+        {/* <label htmlFor="isPostgraduate" className="mt-5 block text-sm font-semibold leading-6  text-black">Are you a postgraduate?</label>
         <select
           id="isPostgraduate"
           name="isPostgraduate"
           value={formData.isPostgraduate}
           onChange={handleInputChange}
-          className=" block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6"
+          className=" block w-full rounded-md border-0 px-3.5 py-2 text-black-900 ring-1 ring-inset ring-black-300 placeholder:text-black-400 focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6"
         >
           <option value="yes">Yes</option>
           <option value="no">No</option>
         </select>
 
+        {renderUGFields()} */}
+
         {renderUGFields()}
+
         <div className="flex flex-col items-center mt-10">
           <button
             type="submit"
