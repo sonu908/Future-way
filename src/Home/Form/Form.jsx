@@ -23,14 +23,15 @@ function Form() {
     gender: "", // add gender to formData
     isPostgraduate: "no",
     ugCollege: "", // Added ugCollege state
+    ugBranch: "",
     ugPercentage: "", // Added ugPercentage state
   });
 
-   const renderUGFields = () => {
+  const renderUGFields = () => {
     if (formData.isPostgraduate === 'yes') {
       return (
-        <div>
-          <label htmlFor="ugCollege" className="block text-sm font-semibold leading-6  text-black">Undergraduate College:</label>
+        <div className="gap-2">
+          <label htmlFor="ugCollege" className="mt-5 block text-sm font-semibold leading-6  text-black">Undergraduate College:</label>
           <input
             type="text"
             name="ugCollege"
@@ -39,8 +40,17 @@ function Form() {
             onChange={handleInputChange}
             className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6"
           />
-          
-          <label htmlFor="ugPercentage" className="block text-sm font-semibold leading-6  text-black">Undergraduate Percentage:</label>
+
+          <label htmlFor="ugBranch" className="mt-5 block text-sm font-semibold leading-6  text-black">Undergraduate Course:</label>
+          <input
+            type="text"
+            name="ugBranch"
+            id="ugBranch"
+            value={formData.ugPercentage}
+            onChange={handleInputChange}
+            className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6"
+          />
+          <label htmlFor="ugPercentage" className="mt-5 block text-sm font-semibold leading-6  text-black">Undergraduate Percentage:</label>
           <input
             type="number"
             name="ugPercentage"
@@ -224,7 +234,7 @@ function Form() {
       console.error("Error submitting form", error);
       setSuccessMessage(""); // Clear success message if any
       setFailureMessage("Error sending");
-   
+
     }
   };
 
@@ -554,7 +564,7 @@ function Form() {
               </p>
             )}
           </div>
-          <div>
+          <div >
             <label
               htmlFor="12th-result"
               className="block text-sm font-semibold leading-6  text-black"
@@ -583,27 +593,27 @@ function Form() {
             <p className="text-red-500 text-sm">{formErrors.twelfthResult}</p>
           )}
         </div>
- <label htmlFor="isPostgraduate" className="block text-sm font-semibold leading-6  text-black">Are you a postgraduate?</label>
-      <select
-        id="isPostgraduate"
-        name="isPostgraduate"
-        value={formData.isPostgraduate}
-        onChange={handleInputChange}
-        className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6"
-      >
-        <option value="yes">Yes</option>
-        <option value="no">No</option>
-      </select>
+        <label htmlFor="isPostgraduate" className="mt-5 block text-sm font-semibold leading-6  text-black">Are you a postgraduate?</label>
+        <select
+          id="isPostgraduate"
+          name="isPostgraduate"
+          value={formData.isPostgraduate}
+          onChange={handleInputChange}
+          className=" block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6"
+        >
+          <option value="yes">Yes</option>
+          <option value="no">No</option>
+        </select>
 
-      {renderUGFields()}
+        {renderUGFields()}
         <div className="flex flex-col items-center mt-10">
           <button
             type="submit"
             className="block w-full rounded-md bg-[#20B486] border px-3.5 py-2.5 text-center text-sm font-semibold text-white hover:shadow-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 "
-           
-            >
-             Send
-            </button>
+
+          >
+            Send
+          </button>
           {successMessage && (
             <div className="text-green-600 font-semibold mt-2">
               {successMessage}
