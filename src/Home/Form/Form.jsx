@@ -24,6 +24,34 @@ function Form() {
     // Add other form fields as needed...
   });
 
+  const renderUGFields = () => {
+    if (formData.isPostgraduate === 'yes') {
+      return (
+        <div>
+          <label htmlFor="ugCollege">Undergraduate College:</label>
+          <input
+            type="text"
+            name="ugCollege"
+            id="ugCollege"
+            value={formData.ugCollege}
+            onChange={handleInputChange}
+            className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6"
+          />
+          
+          <label htmlFor="ugPercentage">Undergraduate Percentage:</label>
+          <input
+            type="number"
+            name="ugPercentage"
+            id="ugPercentage"
+            value={formData.ugPercentage}
+            onChange={handleInputChange}
+            className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6"
+          />
+        </div>
+      );
+    }
+    return null;
+  };
 
 
   const handleInputChange = (e) => {
@@ -553,7 +581,19 @@ function Form() {
             <p className="text-red-500 text-sm">{formErrors.twelfthResult}</p>
           )}
         </div>
+ <label htmlFor="isPostgraduate">Are you a postgraduate?</label>
+      <select
+        id="isPostgraduate"
+        name="isPostgraduate"
+        value={formData.isPostgraduate}
+        onChange={handleInputChange}
+        className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6"
+      >
+        <option value="yes">Yes</option>
+        <option value="no">No</option>
+      </select>
 
+      {renderUGFields()}
         <div className="flex flex-col items-center mt-10">
           <button
             type="submit"
