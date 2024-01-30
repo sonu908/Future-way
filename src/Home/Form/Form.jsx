@@ -282,8 +282,8 @@ function Form() {
 
 const handleSubmit = async (e) => {
   e.preventDefault();
-
   const validationErrors = await validate(); // Wait for validation
+  setFormErrors(validate());
 
   if (Object.keys(validationErrors).length > 0) {
     console.error("Validation errors:", validationErrors);
