@@ -341,9 +341,14 @@ if (Object.keys(validationErrors).length > 0) {
     }
   };
 
-  const handleOptionChange = (e) => {
-    setSelectedOption(e.target.value);
-  };
+const handleOptionChange = (e) => {
+  setSelectedOption(e.target.value);
+  setFormData((prevData) => ({
+    ...prevData,
+    selectedOption: e.target.value,
+  }));
+};
+
 
   return (
     <div className="isolate px-6 py-24 sm:py-32 lg:px-8">
