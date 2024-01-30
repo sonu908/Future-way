@@ -13,7 +13,6 @@ function Form() {
     twelfthStatus: "NA",
     twelfthPercentage: "",
     twelfthStream: "",
-    twelfthResult: "pass", // set default value for twelfthResult
     tenthResult: "pass",
     gender: "", // add gender to formData
     isPostgraduate: "no",
@@ -190,7 +189,7 @@ function Form() {
 
     // Enforce numeric input for specific fields
     if (
-      ["phoneNumber", "tenthPercentage", "twelfthPercentage"].includes(name)
+      ["phoneNumber"].includes(name)
     ) {
       // Allow only numeric values
       const numericValue = value.replace(/\D/g, ""); // Remove non-numeric characters
@@ -215,7 +214,7 @@ function Form() {
       }
     }
     // Enforce length limit for specific fields
-    if (["tenthPercentage", "twelfthPercentage"].includes(name)) {
+    if ([ "twelfthPercentage"].includes(name)) {
       // Limit the length to 2 characters
       const limitedValue = value.slice(0, 2);
       setFormData((prevData) => ({
@@ -266,16 +265,10 @@ function Form() {
 
     // Validation for percentage (assuming it should be a number between 0 and 100)
     const regexPercentage = /^\d{2}$/;
-    if (
-      formData.tenthPercentage &&
-      !regexPercentage.test(formData.tenthPercentage)
-    ) {
-      errors.tenthPercentage = "Invalid percentage!";
-    }
 
     if (
       formData.twelfthPercentage &&
-      !regexPercentage.test(formData.twelfthPercentage)
+      !regexPercentage.test(formData.twelfthPercentage) && formData.twelfthPercentage !== ""
     ) {
       errors.twelfthPercentage = "Invalid percentage!";
     }
