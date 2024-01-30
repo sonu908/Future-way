@@ -280,16 +280,15 @@ function Form() {
     return errors;
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    console.log(formData); // Log the form data to the console
-    setFormErrors(validate());
+const handleSubmit = async (e) => {
+  e.preventDefault();
 
-    const validationErrors = validateForm();
-    if (Object.keys(validationErrors).length > 0) {
-      console.error("Validation errors:", validationErrors);
-      return;
-    }
+  const validationErrors = await validate(); // Wait for validation
+
+  if (Object.keys(validationErrors).length > 0) {
+    console.error("Validation errors:", validationErrors);
+    return;
+  }
 
     try {
       const response = await fetch(
