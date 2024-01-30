@@ -270,13 +270,6 @@ function Form() {
       errors.twelfthPercentage = "Invalid percentage!";
     }
 
-    if (
-      formData.twelfthResult !== "pass" &&
-      formData.twelfthResult !== "fail"
-    ) {
-      errors.twelfthResult = "Invalid value for 12th Result!";
-    }
-
     return errors;
   };
 
@@ -316,7 +309,6 @@ const handleSubmit = async (e) => {
           address: "",
           twelfthStatus: "",
           twelfthPercentage: "",
-          twelfthResult: "pass",
           gender: "",
           selectedOption: "",
           tenthResult: "pass",
@@ -513,9 +505,6 @@ const handleOptionChange = (e) => {
             )}
           </div>
 
-          {formErrors.twelfthResult && (
-            <p className="text-red-500 text-sm">{formErrors.twelfthResult}</p>
-          )}
         </div>
         <div>
           <label
