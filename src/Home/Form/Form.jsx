@@ -290,10 +290,12 @@ function Form() {
 
   
 
-    if (!validateForm()) {
-      console.error("this has");
-      return;
-    }
+  const validationErrors = validateForm();
+if (Object.keys(validationErrors).length > 0) {
+  console.error("Validation errors:", validationErrors);
+  return;
+}
+
 
     try {
       const response = await fetch(
