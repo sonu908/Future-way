@@ -292,10 +292,13 @@ function Form() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+       console.log(formData); // Log the form data to the console
     setFormErrors(validate());
 
+  
+
     if (!validateForm()) {
-      console.error(error);
+      console.error("this has");
       return;
     }
 
