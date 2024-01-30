@@ -295,7 +295,7 @@ function Form() {
     setFormErrors(validate());
 
     if (!validateForm()) {
-      console.error("Form has validation errors");
+      console.error(error);
       return;
     }
 
