@@ -33,29 +33,6 @@ function Form() {
           <div>
             <div>
               <label
-                htmlFor="12th-percentage"
-                className="block text-sm font-semibold leading-6  text-black"
-              >
-                12th Percentage
-              </label>
-              <div className="mt-2.5">
-                <input
-                  type="number"
-                  name="twelfthPercentage"
-                  id="12th-percentage"
-                  value={formData.twelfthPercentage}
-                  onChange={handleInputChange}
-                  className=" block w-full rounded-md border-0 px-3.5 py-2 text-black-900 ring-1 ring-inset ring-black-300 placeholder:text-black-400 focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6"
-                />
-              </div>
-              {formErrors.twelfthPercentage && (
-                <p className="text-red-500 text-sm">
-                  {formErrors.twelfthPercentage}
-                </p>
-              )}
-            </div>
-            <div>
-              <label
                 htmlFor="12th-stream"
                 className="block text-sm font-semibold leading-6  text-black"
               >
@@ -74,6 +51,29 @@ function Form() {
               {formErrors.twelfthStream && (
                 <p className="text-red-500 text-sm">
                   {formErrors.twelfthStream}
+                </p>
+              )}
+            </div>
+             <div>
+              <label
+                htmlFor="12th-percentage"
+                className="block text-sm font-semibold leading-6  text-black"
+              >
+                12th Percentage
+              </label>
+              <div className="mt-2.5">
+                <input
+                  type="number"
+                  name="twelfthPercentage"
+                  id="12th-percentage"
+                  value={formData.twelfthPercentage}
+                  onChange={handleInputChange}
+                  className=" block w-full rounded-md border-0 px-3.5 py-2 text-black-900 ring-1 ring-inset ring-black-300 placeholder:text-black-400 focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6"
+                />
+              </div>
+              {formErrors.twelfthPercentage && (
+                <p className="text-red-500 text-sm">
+                  {formErrors.twelfthPercentage}
                 </p>
               )}
             </div>
