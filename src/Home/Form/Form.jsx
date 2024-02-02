@@ -63,7 +63,7 @@ function Form() {
               </label>
               <div className="mt-2.5">
                 <input
-                  type="number"
+                  type="text"
                   name="twelfthStream"
                   id="12th-stream"
                   value={formData.twelfthStream}
