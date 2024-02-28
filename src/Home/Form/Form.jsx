@@ -33,29 +33,6 @@ function Form() {
           <div>
             <div>
               <label
-                htmlFor="12th-percentage"
-                className="block text-sm font-semibold leading-6  text-black"
-              >
-                12th Percentage
-              </label>
-              <div className="mt-2.5">
-                <input
-                  type="number"
-                  name="twelfthPercentage"
-                  id="12th-percentage"
-                  value={formData.twelfthPercentage}
-                  onChange={handleInputChange}
-                  className=" block w-full rounded-md border-0 px-3.5 py-2 text-black-900 ring-1 ring-inset ring-black-300 placeholder:text-black-400 focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6"
-                />
-              </div>
-              {formErrors.twelfthPercentage && (
-                <p className="text-red-500 text-sm">
-                  {formErrors.twelfthPercentage}
-                </p>
-              )}
-            </div>
-            <div>
-              <label
                 htmlFor="12th-stream"
                 className="block text-sm font-semibold leading-6  text-black"
               >
@@ -74,6 +51,29 @@ function Form() {
               {formErrors.twelfthStream && (
                 <p className="text-red-500 text-sm">
                   {formErrors.twelfthStream}
+                </p>
+              )}
+            </div>
+             <div>
+              <label
+                htmlFor="12th-percentage"
+                className="block text-sm font-semibold leading-6  text-black"
+              >
+                12th Percentage
+              </label>
+              <div className="mt-2.5">
+                <input
+                  type="number"
+                  name="twelfthPercentage"
+                  id="12th-percentage"
+                  value={formData.twelfthPercentage}
+                  onChange={handleInputChange}
+                  className=" block w-full rounded-md border-0 px-3.5 py-2 text-black-900 ring-1 ring-inset ring-black-300 placeholder:text-black-400 focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6"
+                />
+              </div>
+              {formErrors.twelfthPercentage && (
+                <p className="text-red-500 text-sm">
+                  {formErrors.twelfthPercentage}
                 </p>
               )}
             </div>
@@ -249,10 +249,6 @@ function Form() {
       errors.dateOfBirth = "Date of Birth is required!";
     }
 
-    if (!formData.twelfthSchoolName) {
-      errors.twelfthSchoolName = "School Name is required!";
-    }
-
     if (!formData.gender) {
       errors.gender = "Gender is required!";
     }
@@ -268,34 +264,24 @@ function Form() {
 
     if (
       formData.twelfthPercentage &&
-      !regexPercentage.test(formData.twelfthPercentage) && formData.twelfthPercentage !== ""
+      !regexPercentage.test(formData.twelfthPercentage) &&
+      formData.twelfthPercentage !== ""
     ) {
       errors.twelfthPercentage = "Invalid percentage!";
-    }
-
-    if (
-      formData.twelfthResult !== "pass" &&
-      formData.twelfthResult !== "fail"
-    ) {
-      errors.twelfthResult = "Invalid value for 12th Result!";
     }
 
     return errors;
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-       console.log(formData); // Log the form data to the console
-    setFormErrors(validate());
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  const validationErrors = await validate(); // Wait for validation
+  setFormErrors(validate());
 
-  
-
-  const validationErrors = validateForm();
-if (Object.keys(validationErrors).length > 0) {
-  console.error("Validation errors:", validationErrors);
-  return;
-}
-
+  if (Object.keys(validationErrors).length > 0) {
+    console.error("Validation errors:", validationErrors);
+    return;
+  }
 
     try {
       const response = await fetch(
@@ -323,7 +309,6 @@ if (Object.keys(validationErrors).length > 0) {
           address: "",
           twelfthStatus: "",
           twelfthPercentage: "",
-          twelfthResult: "pass",
           gender: "",
           selectedOption: "",
           tenthResult: "pass",
@@ -520,9 +505,6 @@ const handleOptionChange = (e) => {
             )}
           </div>
 
-          {formErrors.twelfthResult && (
-            <p className="text-red-500 text-sm">{formErrors.twelfthResult}</p>
-          )}
         </div>
         <div>
           <label
