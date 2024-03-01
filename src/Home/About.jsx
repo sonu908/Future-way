@@ -98,10 +98,10 @@ function About() {
             <div ref={homeRef} className="bg-cover bg-center bg-no-repeat h-screen relative" >
                 {/*  */}
 
-                <header className="fixed inset-x-0 top-0 z-50 sticky-header backdrop-filter backdrop-blur-sm" >
+                <header className="fixed inset-x-0 top-0 z-50 sticky-header backdrop-filter backdrop-blur-sm " >
                     <nav className="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
-                        <div className="flex lg:flex-1">
-                            <div className='h-12 flex items-center '>
+                        <div className="flex lg:flex-1 ">
+                            <div className='h-12 flex items-center bg-[#e6d9b6] p-2 rounded-2xl'>
                                 <img src={logo} alt="" className="h-full" />
                                 <p className='font-abrill-fatface'>myfutureway</p>
                             </div>
@@ -134,7 +134,7 @@ function About() {
                     </nav>
                     <Dialog as="div" className="lg:hidden" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
                         <div className="fixed inset-0 z-50" />
-                        <Dialog.Panel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+                        <Dialog.Panel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-[#e6d9b6] px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
                             <div className="flex items-center justify-between">
                                 <a href="" className="-m-1.5 p-1.5 ">
                                     <span className="sr-only">MYFUTUREWAY</span>
