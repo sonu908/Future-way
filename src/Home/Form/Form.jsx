@@ -342,14 +342,14 @@ function Form() {
 
   return (
     <div className="isolate px-6 py-24 sm:py-32 lg:px-8">
-      <p className=" text-center text-[#20B486] font-bold">
+      <p className=" text-center text-[#8A826D] font-bold">
         Your future journey begins with a simple message.
       </p>
       <form
         onSubmit={handleSubmit}
         action="#"
         method="POST"
-        className="mx-auto mt-16 max-w-xl sm:mt-20 border border-1 border-emerald-500 border-[#20B48] p-8 rounded-2xl"
+        className="mx-auto mt-16 max-w-xl sm:mt-20 border border-1 border-[#8A826D] p-8 rounded-2xl"
       >
         <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
           <div>
@@ -618,7 +618,7 @@ function Form() {
         <div className="flex flex-col items-center mt-10">
           <button onClick={() => setloading(true)}
             type="submit"
-            className="block w-full rounded-md bg-[#20B486] border px-3.5 py-2.5 text-center text-sm font-semibold text-white hover:shadow-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 "
+            className="block w-full rounded-md bg-[#8A826D] border px-3.5 py-2.5 text-center text-sm font-semibold text-white hover:shadow-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 hover:bg-[#e6d9b6] "
           >
             {loading ? (
               <>
