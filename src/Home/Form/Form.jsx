@@ -287,7 +287,7 @@ function Form() {
 
     try {
       const response = await fetch(
-        "https://myfutureway-backend.onrender.com/submitForm",
+        "https://backend-futureway.vercel.app/submitForm",
         {
           method: "POST",
           headers: {
