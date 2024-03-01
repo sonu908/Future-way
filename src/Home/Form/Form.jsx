@@ -300,6 +300,7 @@ function Form() {
       if (response.ok) {
         // Handle success, e.g., show a success message
         console.log("Mail Sent successfully");
+        setloading(false);
         alert("Mail Sent successfully")
         setSuccessMessage("Mail sent successfully");
         setFailureMessage(""); // Clear failure message if any
