@@ -1,6 +1,8 @@
 import { useState } from "react";
 
 function Form() {
+
+  const [loading, setloading] = useState(false)
   const [successMessage, setSuccessMessage] = useState("");
   const [failureMessage, setFailureMessage] = useState("");
   const [selectedOption, setSelectedOption] = useState("");
@@ -54,7 +56,7 @@ function Form() {
                 </p>
               )}
             </div>
-             <div>
+            <div>
               <label
                 htmlFor="12th-percentage"
                 className="block text-sm font-semibold leading-6  text-black"
@@ -214,7 +216,7 @@ function Form() {
       }
     }
     // Enforce length limit for specific fields
-    if ([ "twelfthPercentage"].includes(name)) {
+    if (["twelfthPercentage"].includes(name)) {
       // Limit the length to 2 characters
       const limitedValue = value.slice(0, 2);
       setFormData((prevData) => ({
@@ -273,15 +275,15 @@ function Form() {
     return errors;
   };
 
-const handleSubmit = async (e) => {
-  e.preventDefault();
-  const validationErrors = await validate(); // Wait for validation
-  setFormErrors(validate());
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const validationErrors = await validate(); // Wait for validation
+    setFormErrors(validate());
 
-  if (Object.keys(validationErrors).length > 0) {
-    console.error("Validation errors:", validationErrors);
-    return;
-  }
+    if (Object.keys(validationErrors).length > 0) {
+      console.error("Validation errors:", validationErrors);
+      return;
+    }
 
     try {
       const response = await fetch(
@@ -297,7 +299,8 @@ const handleSubmit = async (e) => {
 
       if (response.ok) {
         // Handle success, e.g., show a success message
-        console.log("Form submitted successfully");
+        console.log("Mail Sent successfully");
+        alert("Mail Sent successfully")
         setSuccessMessage("Mail sent successfully");
         setFailureMessage(""); // Clear failure message if any
         // Clear form data
@@ -315,7 +318,8 @@ const handleSubmit = async (e) => {
         });
       } else {
         // Handle errors, e.g., show an error message
-        console.error("Failed to submit form");
+        console.error("Some error occurred");
+        alert("Some error occurred")
         setSuccessMessage(""); // Clear success message if any
         setFailureMessage("Failed");
       }
@@ -326,13 +330,13 @@ const handleSubmit = async (e) => {
     }
   };
 
-const handleOptionChange = (e) => {
-  setSelectedOption(e.target.value);
-  setFormData((prevData) => ({
-    ...prevData,
-    selectedOption: e.target.value,
-  }));
-};
+  const handleOptionChange = (e) => {
+    setSelectedOption(e.target.value);
+    setFormData((prevData) => ({
+      ...prevData,
+      selectedOption: e.target.value,
+    }));
+  };
 
 
   return (
@@ -611,11 +615,17 @@ const handleOptionChange = (e) => {
         {renderUGFields()}
 
         <div className="flex flex-col items-center mt-10">
-          <button
+          <button onClick={() => setloading(true)}
             type="submit"
             className="block w-full rounded-md bg-[#20B486] border px-3.5 py-2.5 text-center text-sm font-semibold text-white hover:shadow-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 "
           >
-            Send
+            {loading ? (
+              <>
+                <span className="loading loading-spinner loading-mg"></span>
+              </>
+            ) : (
+              'Send'
+            )}
           </button>
           {successMessage && (
             <div className="text-green-600 font-semibold mt-2">
