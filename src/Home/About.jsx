@@ -3,6 +3,7 @@ import { AcademicCapIcon, GlobeAltIcon, BuildingLibraryIcon, FlagIcon } from '@h
 import Form from './Form/Form'
 import logo from '../assets/logo.png'
 
+
 const posts = [
     {
         id: 1,

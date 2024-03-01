@@ -286,6 +286,7 @@ function Form() {
     }
 
     try {
+      setloading(true);
       const response = await fetch(
         "https://backend-futureway.vercel.app/submitForm",
         {
@@ -616,7 +617,7 @@ function Form() {
         {renderUGFields()}
 
         <div className="flex flex-col items-center mt-10">
-          <button onClick={() => setloading(true)}
+          <button
             type="submit"
             className="block w-full rounded-md bg-[#8A826D] border px-3.5 py-2.5 text-center text-sm font-semibold text-white hover:shadow-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 hover:bg-[#e6d9b6] "
           >
